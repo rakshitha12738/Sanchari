@@ -129,7 +129,7 @@
     .search-input {
       width: 100%;
       padding: 15px 50px 15px 20px;
-      border: 2px solid rgba(99, 102, 241, 0.2);
+      border: 2px solid rgba(107, 142, 35, 0.2);
       border-radius: 50px;
       font-size: 1rem;
       font-family: 'Poppins', sans-serif;
@@ -141,7 +141,7 @@
     .search-input:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 0 4px rgba(107, 142, 35, 0.1);
     }
 
     .search-btn {
@@ -202,7 +202,7 @@
       box-shadow: var(--shadow-md);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      border: 1px solid rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(107, 142, 35, 0.1);
     }
 
     .card:hover {
@@ -446,21 +446,39 @@
         return;
       }
       
-      grid.innerHTML = states.map(state => `
-        <div class="card" onclick="loadCitiesForState('${state._id}', '${state.name}')">
-          <div class="card-image" style="background: linear-gradient(45deg, var(--primary-light), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-            🗺️
-          </div>
-          <div class="card-content">
-            <div class="card-title">${state.name}</div>
-            <div class="card-description">Explore cities and destinations in ${state.name}</div>
-            <div class="card-stats">
-              <span>🏙️ Multiple Cities</span>
-              <span>📍 Click to explore</span>
+      // Define images for each state
+      const stateImages = {
+        'Andhra Pradesh': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Jammu and Kashmir': 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop',
+        'Uttar Pradesh': 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop',
+        'Rajasthan': 'https://images.unsplash.com/photo-1574196287634-4d17f1ba544e?w=800&auto=format&fit=crop',
+        'Kerala': 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop',
+        'Assam': 'https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&auto=format&fit=crop',
+        'Tamil Nadu': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Karnataka': 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop'
+      };
+      
+      grid.innerHTML = states.map(state => {
+        const imageUrl = stateImages[state.name] || state.image || 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop';
+        
+        return `
+          <div class="card" onclick="loadCitiesForState('${state._id}', '${state.name}')">
+            <div class="card-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center; position: relative;">
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(107, 142, 35, 0.5) 0%, rgba(112, 130, 56, 0.4) 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+                <i class="fas fa-map-marked-alt" style="color: white; font-size: 3rem; opacity: 0.9;"></i>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-title">${state.name}</div>
+              <div class="card-description">Explore cities and destinations in ${state.name}</div>
+              <div class="card-stats">
+                <span>🏙️ Multiple Cities</span>
+                <span>📍 Click to explore</span>
+              </div>
             </div>
           </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
     // Load cities for a specific state

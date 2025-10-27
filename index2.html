@@ -192,7 +192,7 @@
       left: 0; 
       width: 100%; 
       height: 100%;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.6) 0%, rgba(236, 72, 153, 0.4) 100%);
+      background: linear-gradient(135deg, rgba(107, 142, 35, 0.6) 0%, rgba(112, 130, 56, 0.4) 100%);
       z-index: 0;
     }
 
@@ -225,7 +225,7 @@
     }
 
     .summary-section {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(107, 142, 35, 0.1) 0%, rgba(112, 130, 56, 0.1) 100%);
       padding: 5rem 2rem;
       text-align: center;
       position: relative;
@@ -398,8 +398,7 @@
     <h1>Discover the World</h1>
     <p>Explore breathtaking places, flavors, and adventures across the globe.</p>
     <div style="margin-top: 2rem; position: relative; z-index: 100; text-align: center;">
-      <button id="popularBtn" onclick="testPopularClick()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" style="margin-right: 1rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #fff; border: 2px solid #fff; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; position: relative; z-index: 101; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">🌟 Popular Places</button>
-      <button id="hiddenBtn" onclick="testHiddenClick()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" style="background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%); color: #fff; border: 2px solid #fff; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; position: relative; z-index: 101; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">💎 Hidden Places</button>
+      
     </div>
   </header>
 
@@ -414,12 +413,12 @@
   </section>
 
   <!-- Popular/Hidden Places Sections -->
-  <section id="popularPlacesSection" style="display: none; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);">
+  <section id="popularPlacesSection" style="display: none; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(107, 142, 35, 0.05) 0%, rgba(112, 130, 56, 0.05) 100%);">
     <h2 style="text-align: center; font-size: 2.2rem; color: var(--text-primary); margin-bottom: 2rem;">Popular Places</h2>
     <div id="popularPlacesList" style="max-width: 1200px; margin: 0 auto;"></div>
   </section>
   
-  <section id="hiddenPlacesSection" style="display: none; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);">
+  <section id="hiddenPlacesSection" style="display: none; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(112, 130, 56, 0.05) 0%, rgba(107, 142, 35, 0.05) 100%);">
     <h2 style="text-align: center; font-size: 2.2rem; color: var(--text-primary); margin-bottom: 2rem;">Hidden Places</h2>
     <div id="hiddenPlacesList" style="max-width: 1200px; margin: 0 auto;"></div>
   </section>
@@ -550,10 +549,10 @@
       
       if (popularBtn && hiddenBtn) {
         if (active === 'popular') {
-          popularBtn.style.background = 'linear-gradient(135deg, #4F46E5 0%, #F59E0B 100%)';
+          popularBtn.style.background = 'linear-gradient(135deg, #6B8E23 0%, #9ACD32 100%)';
           hiddenBtn.style.background = 'linear-gradient(135deg, #ccc 0%, #999 100%)';
         } else {
-          hiddenBtn.style.background = 'linear-gradient(135deg, #EC4899 0%, #4F46E5 100%)';
+          hiddenBtn.style.background = 'linear-gradient(135deg, #708238 0%, #6B8E23 100%)';
           popularBtn.style.background = 'linear-gradient(135deg, #ccc 0%, #999 100%)';
         }
       }
