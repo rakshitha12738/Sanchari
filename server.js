@@ -90,6 +90,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(appRoot));
 
+// Handle favicon.ico request
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).send(); // No content
+});
+
 // API Routes - STRICT MONGODB ONLY
 app.get('/api/states', async (req, res) => {
   try {
@@ -180,11 +185,13 @@ app.post('/api/chat', async (req, res) => {
       return res.status(400).json({ response: 'Please provide a message.' });
     }
 
-    // Replace with your Gemini API key
-    const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyDjIpCL_9F6l6Ol-I6aujO-q8E6fXA-2zM';
-    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`;
-    
-    const prompt = `You are a helpful travel assistant for SANCHARI, an Indian travel guide platform. 
+    // Get API key from environment variables
+    const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+    if (!GEMINI_API_KEY) {
+      throw new Error('GEMINI_API_KEY not found in environment variables');
+    }
+    // Use the stable Gemini 2.5 model with v1 API
+    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;    const prompt = `You are a helpful travel assistant for SANCHARI, an Indian travel guide platform. 
 Answer questions about Indian travel destinations, local food, culture, weather, and tips.
 Keep responses concise (2-3 sentences), friendly, and informative.
 
@@ -201,29 +208,92 @@ User question: ${message}`;
             text: prompt
           }]
         }],
+        safetySettings: [{
+          category: "HARM_CATEGORY_HARASSMENT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        }],
         generationConfig: {
           temperature: 0.7,
           maxOutputTokens: 200,
+          topP: 0.8,
+          topK: 40
         }
-      })
+      }),
+      timeout: 10000 // 10 second timeout
+    }).catch(error => {
+      console.error('Fetch error:', error);
+      throw new Error('Network request failed');
     });
 
+    // First check if we got a response
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Gemini API Error:', errorData);
-      throw new Error('Gemini API request failed');
+      let errorMessage = `HTTP error! status: ${response.status}`;
+      try {
+        const errorData = await response.text(); // Get raw response text
+        console.error('Raw API Error Response:', errorData);
+        
+        // Try to parse it as JSON if possible
+        try {
+          const jsonError = JSON.parse(errorData);
+          console.error('Parsed API Error:', jsonError);
+          errorMessage = jsonError.error?.message || errorMessage;
+        } catch (parseError) {
+          console.error('Could not parse error response as JSON');
+        }
+      } catch (error) {
+        console.error('Could not read error response:', error);
+      }
+      throw new Error(errorMessage);
     }
 
-    const data = await response.json();
-    const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || 
-                       "Sorry, I couldn't process that. Please try again!";
+    // Try to get the response data
+    let responseText;
+    try {
+      const rawResponse = await response.text(); // Get raw response text
+      console.log('Raw API Response:', rawResponse);
+      
+      // Try to parse as JSON
+      const data = JSON.parse(rawResponse);
+      responseText = data.candidates?.[0]?.content?.parts?.[0]?.text ||
+                    data.text || // Try alternate response format
+                    "Sorry, I couldn't process that. Please try again!";
+    } catch (error) {
+      console.error('Error parsing API response:', error);
+      throw new Error('Failed to parse API response');
+    }
     
-    res.json({ response: botResponse });
+    res.json({ response: responseText });
   } catch (error) {
     console.error('Chat API Error:', error);
-    res.status(500).json({ 
-      response: "Sorry, I'm having trouble connecting right now. Please explore our destination pages for travel information!" 
-    });
+    
+    try {
+      // Get the user's message from the request body
+      const userMessage = req.body.message.toLowerCase();
+      let fallbackResponse = "Sorry, I'm having trouble connecting to the AI service right now. ";
+      
+      if (userMessage.includes('kerala')) {
+        fallbackResponse += "Kerala is known as 'God's Own Country' with beautiful backwaters, hill stations, and spice plantations. Visit our Kerala section for detailed information!";
+      } else if (userMessage.includes('tamil nadu')) {
+        fallbackResponse += "Tamil Nadu is the 'Land of Temples' with rich culture, beautiful beaches, and hill stations like Ooty. Check our Tamil Nadu section!";
+      } else if (userMessage.includes('karnataka')) {
+        fallbackResponse += "Karnataka is India's Silicon Valley with beautiful cities like Bangalore, Mysore, and Coorg. Explore our Karnataka section!";
+      } else if (userMessage.includes('rajasthan')) {
+        fallbackResponse += "Rajasthan is the 'Land of Kings' with magnificent palaces, deserts, and rich heritage. Visit our Rajasthan section!";
+      } else if (userMessage.includes('food') || userMessage.includes('cuisine')) {
+        fallbackResponse += "India offers diverse cuisines from spicy South Indian to rich Mughlai food. Each state has unique specialties!";
+      } else if (userMessage.includes('weather') || userMessage.includes('climate')) {
+        fallbackResponse += "India has varied climates. Hill stations are cool, coastal areas are humid, and northern plains have extreme seasons. Check specific destinations for weather info!";
+      } else {
+        fallbackResponse += "Please explore our destination pages for comprehensive travel information about Indian states and cities!";
+      }
+      
+      res.json({ response: fallbackResponse });
+    } catch (fallbackError) {
+      // If even the fallback fails, send a generic response
+      res.json({ 
+        response: "Sorry, I'm having trouble processing your request. Please try exploring our destination pages for travel information!" 
+      });
+    }
   }
 });
 
