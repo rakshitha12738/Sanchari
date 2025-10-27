@@ -1,0 +1,454 @@
+[
+  {
+    "name": "Munnar",
+    "state": "Kerala",
+    "description": "Beautiful hill station known for tea plantations and cool climate",
+    "image": "https://images.unsplash.com/photo-1546993948-1e205db4d9b7?auto=format&fit=crop&w=1600&q=80",
+    "details": "Munnar is a popular hill station in Kerala, famous for its tea plantations, cool climate, and scenic beauty. Located at an altitude of 1,600 meters, it offers breathtaking views of rolling hills covered with tea estates.",
+    "highlights": [
+      "Tea Plantations",
+      "Mattupetty Dam",
+      "Eravikulam National Park",
+      "Top Station"
+    ],
+    "food": [
+      "Tea",
+      "Banana Chips",
+      "Puttu"
+    ],
+    "activities": [
+      "Tea Estate Tours",
+      "Trekking",
+      "Wildlife Watching",
+      "Photography"
+    ],
+    "bestTime": "September to May",
+    "weather": "Cool and Pleasant"
+  },
+  {
+    "name": "Kochi (Cochin)",
+    "state": "Kerala",
+    "description": "Historic port city known for Chinese fishing nets and colonial architecture",
+    "image": "https://images.unsplash.com/photo-1562769450-e96893eb64fb?auto=format&fit=crop&w=1600&q=80",
+    "details": "Kochi is a vibrant city with a rich blend of Indian, Portuguese, Dutch, and British heritage. It's famous for its Chinese fishing nets, historic Fort Kochi, and being the gateway to Kerala's backwaters.",
+    "highlights": [
+      "Chinese Fishing Nets",
+      "Fort Kochi",
+      "Mattancherry Palace",
+      "Paradesi Synagogue"
+    ],
+    "food": [
+      "Seafood",
+      "Appam with Curry",
+      "Kerala Prawns"
+    ],
+    "activities": [
+      "Heritage Walk",
+      "Shopping",
+      "Backwater Cruises",
+      "Cultural Shows"
+    ],
+    "bestTime": "October to March",
+    "weather": "Moderate"
+  },
+  {
+    "name": "Alleppey (Alappuzha)",
+    "state": "Kerala",
+    "description": "Venice of East - Famous for its backwaters and houseboat cruises",
+    "image": "https://images.unsplash.com/photo-1539650116574-75c0c6d73a66?auto=format&fit=crop&w=1600&q=80",
+    "details": "Alleppey is renowned for its beautiful backwaters, houseboats, and annual Nehru Trophy Boat Race. It's a perfect destination for a peaceful retreat away from city life.",
+    "highlights": [
+      "Houseboats",
+      "Backwaters",
+      "Ambalapuzha Temple",
+      "Nehru Trophy Boat Race"
+    ],
+    "food": [
+      "Karimeen",
+      "Appam",
+      "Duck Roast"
+    ],
+    "activities": [
+      "Houseboat Stay",
+      "Canoeing",
+      "Kayaking",
+      "Bird Watching"
+    ],
+    "bestTime": "November to February",
+    "weather": "Pleasant and Moderate"
+  },
+  {
+    "name": "Ooty (Ootacamund)",
+    "state": "Tamil Nadu",
+    "description": "Queen of Hill Stations - Picturesque town in the Nilgiri Hills",
+    "image": "https://images.unsplash.com/photo-1577503155236-56174006e172?auto=format&fit=crop&w=1600&q=80",
+    "details": "Ooty is a charming hill station with beautiful gardens, lakes, and tea estates. Known as the 'Queen of Hill Stations', it offers a refreshing escape with its cool climate and stunning natural beauty.",
+    "highlights": [
+      "Botanical Gardens",
+      "Ooty Lake",
+      "Rose Garden",
+      "Doddabetta Peak"
+    ],
+    "food": [
+      "Tea",
+      "Homemade Chocolates",
+      "Honey",
+      "Eucalyptus Oil"
+    ],
+    "activities": [
+      "Boating",
+      "Gardens Tour",
+      "Nilgiri Railway",
+      "Mountain Trekking"
+    ],
+    "bestTime": "March to June, September to November",
+    "weather": "Cool throughout the year"
+  },
+  {
+    "name": "Mahabalipuram",
+    "state": "Tamil Nadu",
+    "description": "Ancient port city with magnificent rock-cut temples and UNESCO World Heritage Site",
+    "image": "https://images.unsplash.com/photo-1576124153483-72663ca18fd0?auto=format&fit=crop&w=1600&q=80",
+    "details": "Mahabalipuram is famous for its ancient monuments dating back to the 7th and 8th centuries. This UNESCO World Heritage Site showcases magnificent rock-cut architecture and is known for its shore temples.",
+    "highlights": [
+      "Shore Temple",
+      "Pancha Rathas",
+      "Arjuna's Penance",
+      "Mahabalipuram Beach"
+    ],
+    "food": [
+      "Seafood",
+      "South Indian Thali",
+      "Fresh Coconut Water"
+    ],
+    "activities": [
+      "Temple Tours",
+      "Beach Activities",
+      "Rock Climbing",
+      "Shopping"
+    ],
+    "bestTime": "November to February",
+    "weather": "Pleasant"
+  },
+  {
+    "name": "Kodaikanal",
+    "state": "Tamil Nadu",
+    "description": "Princess of Hill Stations - Beautiful hill retreat with natural beauty",
+    "image": "https://images.unsplash.com/photo-1545252284-6a5733da8e31?auto=format&fit=crop&w=1600&q=80",
+    "details": "Kodaikanal is a serene hill station known for its picturesque landscapes, lakes, and pleasant climate. Often called the 'Princess of Hill Stations', it offers breathtaking views and peaceful atmosphere.",
+    "highlights": [
+      "Kodaikanal Lake",
+      "Coaker's Walk",
+      "Pillar Rocks",
+      "Bryant Park"
+    ],
+    "food": [
+      "Homemade Chocolates",
+      "Cheese",
+      "Eucalyptus Oil"
+    ],
+    "activities": [
+      "Boating",
+      "Trekking",
+      "Nature Walk",
+      "Shopping"
+    ],
+    "bestTime": "April to June, September to October",
+    "weather": "Cool and Pleasant"
+  },
+  {
+    "name": "Mysore",
+    "state": "Karnataka",
+    "description": "City of Palaces - Royal heritage and cultural hub",
+    "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1600&q=80",
+    "details": "Mysore is known for its magnificent palaces, especially the Mysore Palace, which is illuminated every Sunday. The city has a rich royal heritage and is famous for its silk, sandalwood, and Mysore Pak.",
+    "highlights": [
+      "Mysore Palace",
+      "Chamundi Hills",
+      "Brindavan Gardens",
+      "Mysore Zoo"
+    ],
+    "food": [
+      "Mysore Pak",
+      "Mysore Masala Dosa",
+      "Mysore Bonda",
+      "Kesari Bath"
+    ],
+    "activities": [
+      "Palace Tour",
+      "Shoping for Silk",
+      "Zoo Visit",
+      "Heritage Walk"
+    ],
+    "bestTime": "October to February",
+    "weather": "Pleasant"
+  },
+  {
+    "name": "Coorg (Kodagu)",
+    "state": "Karnataka",
+    "description": "Scotland of India - Coffee plantations and misty hills",
+    "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1600&q=80",
+    "details": "Coorg is famous for its coffee plantations, scenic beauty, and pleasant weather. Known as the 'Scotland of India', it offers beautiful landscapes, waterfalls, and opportunities for adventure activities.",
+    "highlights": [
+      "Coffee Estates",
+      "Talakaveri",
+      "Raja's Seat",
+      "Abbey Falls"
+    ],
+    "food": [
+      "Pandi Curry",
+      "Kadambuttu",
+      "Coffee",
+      "Coorg Cuisine"
+    ],
+    "activities": [
+      "Coffee Plantation Tour",
+      "Trekking",
+      "River Rafting",
+      "Wildlife Safari"
+    ],
+    "bestTime": "October to March",
+    "weather": "Pleasant and Cool"
+  },
+  {
+    "name": "Gokarna",
+    "state": "Karnataka",
+    "description": "Peaceful beach destination with sacred temples and pristine beaches",
+    "image": "https://images.unsplash.com/photo-1541577141970-eebc83ebe30e?auto=format&fit=crop&w=1600&q=80",
+    "details": "Gokarna is a small temple town with beautiful beaches, known for its spiritual significance and laid-back atmosphere. It's a perfect blend of spirituality and beach holiday.",
+    "highlights": [
+      "Om Beach",
+      "Gokarna Beach",
+      "Mahaganapati Temple",
+      "Half Moon Beach"
+    ],
+    "food": [
+      "Seafood",
+      "South Indian Meals",
+      "Fresh Coconuts"
+    ],
+    "activities": [
+      "Beach Activities",
+      "Temple Visit",
+      "Water Sports",
+      "Trekking"
+    ],
+    "bestTime": "October to March",
+    "weather": "Tropical Beach Climate"
+  },
+  {
+    "name": "Udaipur",
+    "state": "Rajasthan",
+    "description": "City of Lakes - Romantic destination with beautiful palaces",
+    "image": "https://images.unsplash.com/photo-1574196287634-4d17f1ba544e?auto=format&fit=crop&w=1600&q=80",
+    "details": "Udaipur is famous for its beautiful lakes, palaces, and romantic ambiance. Known as the 'Venice of the East', it offers stunning architecture and picturesque settings for a memorable visit.",
+    "highlights": [
+      "Lake Pichola",
+      "City Palace",
+      "Jag Mandir",
+      "Fateh Sagar Lake"
+    ],
+    "food": [
+      "Dal Baati Churma",
+      "Laal Maas",
+      "Gatte ki Sabzi",
+      "Ker Sangri"
+    ],
+    "activities": [
+      "Boat Ride on Lake",
+      "Palace Tour",
+      "Shopping",
+      "Cultural Shows"
+    ],
+    "bestTime": "September to March",
+    "weather": "Pleasant in winter, hot in summer"
+  },
+  {
+    "name": "Jaisalmer",
+    "state": "Rajasthan",
+    "description": "Golden City - Desert paradise with magnificent forts",
+    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1600&q=80",
+    "details": "Jaisalmer is a city in the heart of the Thar Desert, famous for its golden sand dunes and magnificent sandstone architecture. The Jaisalmer Fort is a living fort with residential quarters.",
+    "highlights": [
+      "Jaisalmer Fort",
+      "Sam Sand Dunes",
+      "Patwon Ki Haveli",
+      "Gadisar Lake"
+    ],
+    "food": [
+      "Desert Cuisine",
+      "Kesar Kulfi",
+      "Dal Baati Churma"
+    ],
+    "activities": [
+      "Desert Safari",
+      "Camel Ride",
+      "Sand Dunes Camping",
+      "Fort Exploration"
+    ],
+    "bestTime": "October to March",
+    "weather": "Desert Climate"
+  },
+  {
+    "name": "Guwahati",
+    "state": "Assam",
+    "description": "Gateway to Northeast - Major city with spiritual and natural attractions",
+    "image": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1600&q=80",
+    "details": "Guwahati is the largest city in Assam and serves as the gateway to the Northeast. It's known for the Kamakhya Temple, which is one of the most important Shakti Peethas.",
+    "highlights": [
+      "Kamakhya Temple",
+      "Umananda Temple",
+      "Sualkuchi (Silk City)",
+      "Aparajita Temple"
+    ],
+    "food": [
+      "Assamese Thali",
+      "Fish Curry",
+      "Khar",
+      "Pitha"
+    ],
+    "activities": [
+      "Temple Visit",
+      "River Cruise",
+      "Shopping",
+      "Exploring Tea Gardens"
+    ],
+    "bestTime": "October to April",
+    "weather": "Subtropical"
+  },
+  {
+    "name": "Agra",
+    "state": "Uttar Pradesh",
+    "description": "City of the Taj Mahal - Home to one of the Seven Wonders of the World",
+    "image": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80",
+    "details": "Agra is home to the iconic Taj Mahal, one of the Seven Wonders of the World. The city has a rich Mughal history with several UNESCO World Heritage Sites including the Agra Fort.",
+    "highlights": [
+      "Taj Mahal",
+      "Agra Fort",
+      "Fatehpur Sikri",
+      "Itmad-ud-Daulah Tomb"
+    ],
+    "food": [
+      "Agra Petha",
+      "Mughlai Cuisine",
+      "Bedai",
+      "Dalmoth"
+    ],
+    "activities": [
+      "Taj Mahal Visit",
+      "Fort Tour",
+      "Shopping",
+      "Cultural Tours"
+    ],
+    "bestTime": "October to March",
+    "weather": "Extreme - hot summers, cold winters"
+  },
+  {
+    "name": "Varanasi (Kashi)",
+    "state": "Uttar Pradesh",
+    "description": "Spiritual Capital of India - One of the oldest living cities",
+    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=80",
+    "details": "Varanasi is one of the oldest continuously inhabited cities in the world. It's the spiritual capital of India, known for its ghats on the Ganges, religious significance, and vibrant culture.",
+    "highlights": [
+      "Ganga Aarti",
+      "Ghats",
+      "Kashi Vishwanath Temple",
+      "Sarnath"
+    ],
+    "food": [
+      "Banarasi Paan",
+      "Kachori Sabzi",
+      "Lassi",
+      "Malaiyyo"
+    ],
+    "activities": [
+      "Ganga Aarti",
+      "Boat Ride",
+      "Temple Visit",
+      "Spiritual Tours"
+    ],
+    "bestTime": "October to March",
+    "weather": "Hot summers, cold winters"
+  },
+  {
+    "name": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "description": "Jewel of the East Coast - Coastal city with beaches and industries",
+    "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1600&q=80",
+    "details": "Visakhapatnam, also known as Vizag, is a port city on the east coast with beautiful beaches, hills, and natural harbors. It's one of the largest cities in Andhra Pradesh.",
+    "highlights": [
+      "RK Beach",
+      "Kailasagiri",
+      "Simhachalam Temple",
+      "Submarine Museum"
+    ],
+    "food": [
+      "Seafood",
+      "Pesarattu",
+      "Dosa",
+      "Fresh Fish"
+    ],
+    "activities": [
+      "Beach Activities",
+      "Temple Visit",
+      "Hiking",
+      "Industrial Tours"
+    ],
+    "bestTime": "October to March",
+    "weather": "Tropical coastal climate"
+  },
+  {
+    "name": "Srinagar",
+    "state": "Jammu and Kashmir",
+    "description": "Venice of India - Beautiful lakes and Mughal gardens",
+    "image": "https://images.unsplash.com/photo-1539884515094-6d5b82cf2847?auto=format&fit=crop&w=1600&q=80",
+    "details": "Srinagar is famous for its beautiful Dal Lake, Mughal gardens, and houseboats. It's surrounded by snow-capped mountains and offers breathtaking natural beauty throughout the year.",
+    "highlights": [
+      "Dal Lake",
+      "Houseboats",
+      "Shalimar Bagh",
+      "Nishat Bagh"
+    ],
+    "food": [
+      "Wazwan",
+      "Rogan Josh",
+      "Modur Pulav",
+      "Kahwa"
+    ],
+    "activities": [
+      "Shikara Ride",
+      "Houseboat Stay",
+      "Garden Tours",
+      "Photography"
+    ],
+    "bestTime": "April to October",
+    "weather": "Cool throughout the year"
+  },
+  {
+    "name": "Gulmarg",
+    "state": "Jammu and Kashmir",
+    "description": "Meadow of Flowers - Premier ski destination in India",
+    "image": "https://images.unsplash.com/photo-1504593813933-6d29b04ee7fe?auto=format&fit=crop&w=1600&q=80",
+    "details": "Gulmarg is India's premier ski destination and is famous for its snow-covered landscapes, gondola rides, and beautiful meadows. It's a paradise for adventure enthusiasts.",
+    "highlights": [
+      "Skiing",
+      "Gondola Ride",
+      "Apharwat Peak",
+      "Golf Course"
+    ],
+    "food": [
+      "Kashmiri Cuisine",
+      "Sheer Chai",
+      "Kahwa",
+      "Wazwan"
+    ],
+    "activities": [
+      "Skiing",
+      "Snowboarding",
+      "Gondola Rides",
+      "Trekking"
+    ],
+    "bestTime": "December to April",
+    "weather": "Cold with heavy snowfall"
+  }
+]

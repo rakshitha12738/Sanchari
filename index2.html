@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: background 0.4s ease;
+    }
+    nav.scrolled { background: rgba(15, 23, 42, 0.95); }
+
+    nav h1 { color: #fff; font-size: 1.5rem; letter-spacing: 1px; }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #38bdf8; }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px; width: 25px; background: #fff; margin: 4px 0; border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(15, 23, 42, 0.95);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .nav-links.open { max-height: 300px; }
+      .menu-toggle { display: flex; }
+    }
+
+    header {
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s forwards;
+    }
+    header h1 { font-size: 3rem; animation-delay: 0.3s; }
+    header p { font-size: 1.2rem; margin-top: 1rem; animation-delay: 0.6s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .summary-section {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      color: #1e293b;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card button {
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .card button:hover {
+      background: #2563eb;
+      transform: scale(1.05);
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 1s ease;
+    }
+    .section.visible { opacity: 1; transform: translateY(0); }
+
+    .section:nth-child(even) { background-color: #f1f5f9; }
+
+    .section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 1s ease;
+    }
+    .section.visible img { transform: scale(1.03); }
+
+    .text { max-width: 500px; }
+    .text h2 { font-size: 2rem; color: #0f172a; margin-bottom: 1rem; }
+    .text p { color: #334155; line-height: 1.6; }
+
+     
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>SANCHARI</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="#section1">History</a>
+      <a href="#section2">Food</a>
+      <a href="#section3">Adventure</a>
+      <a href="#section4">Safety</a>
+      <a href="#section5">Attractions</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Discover the World</h1>
+    <p>Explore breathtaking places, flavors, and adventures across the globe.</p>
+  </header>
+
+  <section class="summary-section">
+    <h2>At First Look</h2>
+    <div class="cards">
+      <div class="card"><h3>🏛️ History</h3><p>Step back in time and explore ancient wonders.</p><button onclick="scrollToSection(1)">Learn More</button></div>
+      <div class="card"><h3>🍲 Food</h3><p>Taste the culture through every delicious dish.</p><button onclick="scrollToSection(2)">Learn More</button></div>
+      <div class="card"><h3>🌄 Adventure</h3><p>Thrills and explorations that spark your soul.</p><button onclick="scrollToSection(3)">Learn More</button></div>
+      <div class="card"><h3>🛡️ Safety</h3><p>Smart tips for safe, stress-free travel.</p><button onclick="scrollToSection(4)">Learn More</button></div>
+    </div>
+  </section>
+
+  <section class="section" id="section1">
+    <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80" alt="History" />
+    <div class="text">
+      <h2>Rich History</h2>
+      <p>Every destination holds centuries of stories. Walk through ancient ruins and feel the heartbeat of civilizations that shaped our world.</p>
+    </div>
+  </section>
+
+  <section class="section" id="section2">
+    <div class="text">
+      <h2>World of Flavors</h2>
+      <p>From spicy street foods to elegant global cuisines, explore the tastes that define every culture. Each dish tells a story of tradition and creativity.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Food" />
+  </section>
+
+  <section class="section" id="section3">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Adventure" />
+    <div class="text">
+      <h2>Adventure Awaits</h2>
+      <p>Embrace your inner explorer. Whether hiking, diving, or paragliding, adventure connects you to the planet’s pulse and makes you feel alive.</p>
+    </div>
+  </section>
+
+  <section class="section" id="section4">
+    <div class="text">
+      <h2>Travel Smart & Safe</h2>
+      <p>Safety ensures joyful journeys. Stay mindful, respect customs, and keep essential contacts handy wherever you go.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80" alt="Safety Tips" />
+  </section>
+
+  <section class="section" id="section5">
+    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Nearby Attractions" />
+    <div class="text">
+      <h2>Nearby Attractions</h2>
+      <p>Every journey unveils hidden gems just around the corner. Discover nearby attractions — serene lakes, local markets, historical landmarks, and breathtaking viewpoints that make your trip unforgettable.</p>
+    </div>
+  </section>
+
+   
+
+  <script>
+    let cityData = null;
+    let statesData = [];
+
+    // Fetch city data from API
+    async function loadCityData(cityName) {
+      try {
+        const response = await fetch(`/api/city/${encodeURIComponent(cityName)}`);
+        if (response.ok) {
+          cityData = await response.json();
+          updatePageWithCityData();
+        } else {
+          console.error('City not found');
+        }
+      } catch (error) {
+        console.error('Error loading city:', error);
+      }
+    }
+
+    // Update page with city-specific content
+    function updatePageWithCityData() {
+      if (!cityData) return;
+
+      // Update header
+      document.querySelector('header h1').textContent = `Discover ${cityData.name}`;
+      document.querySelector('header p').textContent = cityData.description;
+
+      // Update summary cards
+      const cards = document.querySelectorAll('.cards .card');
+      if (cards.length >= 4) {
+        cards[0].querySelector('p').textContent = cityData.history || 'Rich heritage and culture';
+        cards[1].querySelector('p').textContent = `Taste local delicacies: ${cityData.food ? cityData.food.join(', ') : 'Local cuisine'}`;
+        cards[2].querySelector('p').textContent = `Activities: ${cityData.activities ? cityData.activities.join(', ') : 'Adventure awaits'}`;
+        cards[3].querySelector('p').textContent = `Safety: ${cityData.safety || 'Generally safe'}`;
+      }
+
+      // Update sections
+      const sections = document.querySelectorAll('.section');
+      
+      // Section 1: History
+      if (sections[0]) {
+        const img = sections[0].querySelector('img');
+        if (cityData.image && img) {
+          img.src = cityData.image;
+        }
+        const text = sections[0].querySelector('.text p');
+        if (text) {
+          text.textContent = cityData.details || cityData.description;
+        }
+      }
+
+      // Section 2: Food
+      if (sections[1]) {
+        const img = sections[1].querySelector('img');
+        if (img && cityData.image) {
+          img.src = cityData.image;
+        }
+        const text = sections[1].querySelector('.text');
+        if (text && cityData.food) {
+          text.querySelector('p').textContent = `Must-try dishes: ${cityData.food.join(', ')}`;
+        }
+      }
+
+      // Section 3: Adventure
+      if (sections[2]) {
+        const img = sections[2].querySelector('img');
+        if (img && cityData.image) {
+          img.src = cityData.image;
+        }
+        const text = sections[2].querySelector('.text');
+        if (text && cityData.activities) {
+          text.querySelector('p').textContent = `Top activities: ${cityData.activities.join(', ')}`;
+        }
+      }
+
+      // Section 4: Safety
+      if (sections[3]) {
+        const text = sections[3].querySelector('.text');
+        if (text) {
+          text.querySelector('p').textContent = `Best time to visit: ${cityData.bestTime || 'Year-round'}. Weather: ${cityData.weather || 'Varies by season'}`;
+        }
+      }
+
+      // Section 5: Attractions
+      if (sections[4]) {
+        const img = sections[4].querySelector('img');
+        if (img && cityData.image) {
+          img.src = cityData.image;
+        }
+        const text = sections[4].querySelector('.text');
+        if (text && cityData.highlights) {
+          text.querySelector('p').textContent = `Must-visit: ${cityData.highlights.join(', ')}`;
+        }
+      }
+
+      // Update background image
+      const header = document.querySelector('header');
+      if (header && cityData.image) {
+        header.style.backgroundImage = `url('${cityData.image}')`;
+      }
+    }
+
+    // Fetch states data from API
+    async function loadStates() {
+      try {
+        const response = await fetch('/api/states');
+        statesData = await response.json();
+        console.log('Loaded states:', statesData.length);
+      } catch (error) {
+        console.error('Error loading states:', error);
+      }
+    }
+
+    // Update content dynamically based on URL parameters
+    function updateContent() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cityName = urlParams.get('city');
+      const stateName = urlParams.get('state');
+      
+      if (cityName) {
+        // Load city-specific data
+        loadCityData(cityName);
+      } else if (stateName && statesData.length > 0) {
+        const state = statesData.find(s => 
+          s.name.toLowerCase() === stateName.toLowerCase()
+        );
+        
+        if (state) {
+          // Update page content with state-specific data
+          document.querySelector('header h1').textContent = `Discover ${state.name}`;
+          document.querySelector('header p').textContent = state.description;
+          
+          if (state.image) {
+            const header = document.querySelector('header');
+            if (header) {
+              header.style.backgroundImage = `url('${state.image}')`;
+            }
+          }
+        }
+      }
+    }
+
+    function scrollToSection(num) {
+      document.getElementById(`section${num}`).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadStates();
+      updateContent();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🌍 SANCHARI - Your Smart Travel Guide</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html,body { height:100%; scroll-behavior: smooth; }
+        :root{
+            /* Sophisticated Color Palette */
+            --primary: #6366F1;        /* Vibrant Indigo */
+            --primary-light: #818CF8;  /* Light Indigo */
+            --primary-dark: #4F46E5;   /* Dark Indigo */
+            --secondary: #F59E0B;      /* Warm Amber */
+            --secondary-light: #FCD34D; /* Light Amber */
+            --accent: #EC4899;         /* Vibrant Pink */
+            --accent-light: #F9A8D4;   /* Light Pink */
+            
+            /* Backgrounds */
+            --bg-gradient-start: #F0F9FF; /* Sky Blue */
+            --bg-gradient-end: #FEF3C7;   /* Warm Yellow */
+            --bg-overlay: rgba(255, 255, 255, 0.65);
+            
+            /* Neutrals */
+            --text-primary: #1E293B;
+            --text-secondary: #64748B;
+            --text-muted: #94A3B8;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        body{
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 28px 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container{ 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            position: relative; 
+            z-index: 1;
+        }
+
+        /* Header */
+        .header{ 
+            text-align: center; 
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        .header h1{
+            display: inline-flex; 
+            align-items: center; 
+            gap: 16px;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            font-family: 'Caveat Brush', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+        
+        .header p{ 
+            color: var(--text-secondary); 
+            margin-top: 16px; 
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        
+        .header .explore-link{
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header .explore-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .header .explore-link:hover::before {
+            left: 100%;
+        }
+        
+        .header .explore-link:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Card look for main areas */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--glass-shadow);
+            border: 2px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        /* Search */
+        .search-container.card{ 
+            display: flex; 
+            flex-direction: column; 
+            gap: 16px; 
+            margin-bottom: 32px;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+        
+        .search-form{ 
+            display: flex; 
+            gap: 12px; 
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .search-input{
+            flex: 1; 
+            min-width: 320px; 
+            padding: 16px 24px; 
+            border-radius: 50px; 
+            border: 2px solid rgba(99, 102, 241, 0.15);
+            background: white; 
+            color: var(--text-primary); 
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .search-input::placeholder{ 
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        
+        .search-input:focus{ 
+            outline: none; 
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 8px 24px rgba(99, 102, 241, 0.15); 
+            transform: translateY(-2px); 
+            border-color: var(--primary);
+        }
+        
+        .search-btn{
+            padding: 16px 28px; 
+            border-radius: 50px; 
+            border: none; 
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white; 
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .search-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .search-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .search-btn:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .suggestions{ 
+            display: flex; 
+            gap: 12px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 8px;
+        }
+        
+        .suggestion-tag{
+            padding: 10px 20px; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            color: var(--text-primary);
+            background: white;
+            font-weight: 600; 
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .suggestion-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .suggestion-tag:hover, .suggestion-tag.active{ 
+            transform: translateY(-4px); 
+            box-shadow: var(--shadow-md); 
+            color: white;
+            border-color: transparent;
+        }
+        
+        .suggestion-tag:hover::before, .suggestion-tag.active::before {
+            opacity: 1;
+        }
+
+        /* WHY SANCHARI — enlarged + highlighted */
+        .why-section{
+            margin: 40px 0;
+            border-radius: 28px;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            box-shadow: var(--glass-shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out 0.4s both;
+        }
+        
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* extra large and prominent title */
+        .why-title{
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Caveat Brush', cursive;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* gentle pulse highlight */
+        .why-section.highlight{
+            box-shadow: var(--shadow-xl);
+            transform: scale(1.01);
+        }
+
+        .why-list{ 
+            display: flex; 
+            gap: 16px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            align-items: center; 
+            position: relative;
+            z-index: 1;
+        }
+        
+        .why-item{
+            display: inline-flex; 
+            gap: 12px; 
+            align-items: center; 
+            padding: 14px 24px; 
+            border-radius: 50px;
+            background: white;
+            color: var(--text-primary); 
+            font-weight: 600; 
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid rgba(99, 102, 241, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .why-item:hover{ 
+            transform: translateY(-6px); 
+            box-shadow: var(--shadow-md); 
+            color: white;
+            border-color: transparent;
+        }
+        
+        .why-item:hover::before {
+            left: 0;
+        }
+
+        /* rolling images with soft fade edges */
+        .rolling-wrap{ 
+            width: 100%; 
+            position: relative; 
+            margin-top: 24px; 
+            padding: 16px 0; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            background: transparent;
+        }
+        
+        .fade-edge{ 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            width: 120px; 
+            pointer-events: none; 
+            z-index: 3; 
+        }
+        
+        .fade-edge.left{ 
+            left: 0; 
+            background: linear-gradient(90deg, var(--bg-gradient-start) 0%, rgba(255,255,255,0) 100%); 
+        }
+        
+        .fade-edge.right{ 
+            right: 0; 
+            background: linear-gradient(270deg, var(--bg-gradient-end) 0%, rgba(255,255,255,0) 100%); 
+        }
+
+        .rolling-track{
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+            padding: 8px 32px;
+            animation: roll-left 30s linear infinite;
+            width: max-content;
+            will-change: transform;
+        }
+        
+        .rolling-track a {
+            display: inline-block;
+            flex: 0 0 auto;
+        }
+        
+        .rolling-track:hover{ 
+            animation-play-state: paused; 
+        }
+        
+        .rolling-img{
+            width: 340px; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 20px; 
+            flex: 0 0 auto;
+            box-shadow: var(--shadow-md); 
+            cursor: pointer; 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 3px solid white;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+        
+        .rolling-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .rolling-img:hover{ 
+            transform: translateY(-12px) scale(1.05); 
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .rolling-img:hover::after {
+            opacity: 1;
+        }
+
+        @keyframes roll-left{
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* State Sections */
+        .state-heading { 
+            text-align: center; 
+            margin: 80px 0 32px; 
+            font-family: 'Playfair Display', serif; 
+            font-size: 42px; 
+            font-weight: 700; 
+            color: var(--text-primary);
+            letter-spacing: 2px; 
+        }
+        
+        .state-section { 
+            font-family: 'Nunito', sans-serif; 
+            padding: 50px 30px; 
+            background-size: cover; 
+            background-position: center; 
+            position: relative; 
+            color: #fff; 
+            border-radius: 32px; 
+            margin-bottom: 60px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            min-height: 480px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.4s ease;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .state-section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+        }
+        
+        .state-section::before { 
+            content: ""; 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.7) 0%, rgba(236, 72, 153, 0.6) 100%);
+            border-radius: 32px; 
+            z-index: 0; 
+            transition: opacity 0.4s ease;
+        }
+        
+        .state-section:hover::before {
+            opacity: 0.85;
+        }
+        
+        .state-content { 
+            position: relative; 
+            z-index: 1; 
+            text-align: center; 
+            max-width: 960px; 
+            margin: 0 auto; 
+            background: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 32px; 
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .state-content .state-heading{
+            margin: 0 0 28px 0;
+        }
+        
+        .state-content .state-heading a{
+            color: inherit;
+            text-decoration: none;
+            font-size: 2.8rem;
+            font-weight: bold;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 12px 32px;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .state-content .state-heading a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .columns { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 50px; 
+            margin-top: 28px; 
+        }
+        
+        .column { 
+            min-width: 240px; 
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .column:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 24px; 
+            margin-bottom: 16px; 
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
+            border-bottom: 3px solid rgba(255, 255, 255, 0.6); 
+            display: inline-block; 
+            padding-bottom: 6px;
+            letter-spacing: 1px;
+        }
+        
+        ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+        
+        li { 
+            margin: 12px 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            transition: all 0.3s ease; 
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+        
+        li:hover { 
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(8px); 
+            color: #fff;
+        }
+        
+        .place-link { 
+            color: #ffffff; 
+            text-decoration: none; 
+            cursor: pointer; 
+            padding: 4px 8px; 
+            border-radius: 6px; 
+            transition: all 0.3s ease; 
+        }
+        
+        .place-link:hover { 
+            background: rgba(255, 255, 255, 0.25); 
+            color: #fff; 
+        }
+        
+        .place-text {
+            color: #ffffff;
+            padding: 4px 8px;
+            font-weight: 500;
+        }
+
+        @media (max-width:900px){
+            .header h1{ 
+                font-size: 2.5rem; 
+            }
+            .search-input{ 
+                min-width: 100%; 
+            }
+            .search-form {
+                flex-direction: column;
+            }
+            .search-btn {
+                width: 100%;
+            }
+            .rolling-img{ 
+                width: 260px; 
+                height: 160px; 
+            }
+            .state-heading { 
+                font-size: 32px; 
+            }
+            .state-content .state-heading a {
+                font-size: 2rem;
+            }
+            h2 { 
+                font-size: 20px; 
+            }
+            li { 
+                font-size: 15px; 
+            }
+            .why-title {
+                font-size: 1.8rem;
+            }
+            .state-section {
+                padding: 30px 20px;
+                min-height: 380px;
+            }
+            .chatbot-window {
+                width: calc(100% - 20px);
+                right: 10px;
+                left: 10px;
+                bottom: 90px;
+                height: 500px;
+            }
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366F1, #EC4899);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+        }
+
+        .chatbot-toggle i {
+            color: white;
+            font-size: 28px;
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 400px;
+            height: 550px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+
+        .chatbot-window.open {
+            display: flex;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #6366F1, #EC4899);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background: white;
+            color: #1f2937;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .message.bot .typing {
+            display: flex;
+            gap: 4px;
+        }
+
+        .message.bot .typing span {
+            width: 8px;
+            height: 8px;
+            background: #6366F1;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .message.bot .typing span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .message.bot .typing span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .chatbot-input-area {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 24px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chatbot-input:focus {
+            border-color: #6366F1;
+        }
+
+        .chatbot-send {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-send:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .chatbot-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header" role="banner">
+            <h1>✈️ SANCHARI</h1>
+            <p>Discover curated tips, local food, culture & nearby attractions — fast.</p>
+            <a href="index2.html" class="explore-link">Explore More Details →</a>
+        </header>
+
+        <section class="search-container card" role="search" aria-label="Search destinations">
+            <form id="searchForm" class="search-form">
+                <input id="destinationInput" class="search-input" placeholder="Enter destination... (e.g. Kerala)" autocomplete="off" />
+                <button id="searchBtn" class="search-btn" type="button">
+                    <i class="fas fa-search"></i>&nbsp; Search
+                </button>
+            </form>
+            <div class="suggestions" aria-hidden="false">
+                <div class="suggestion-tag" onclick="selectState(this)">Kerala</div>
+                <div class="suggestion-tag" onclick="selectState(this)">Tamil Nadu</div>
+                <div class="suggestion-tag" onclick="selectState(this)">Karnataka</div>
+                <div class="suggestion-tag" onclick="selectState(this)">Jammu and Kashmir</div>
+                <div class="suggestion-tag" onclick="selectState(this)">Rajasthan</div>
+                <div class="suggestion-tag" onclick="selectState(this)">Uttar Pradesh</div>
+                <div class="suggestion-tag" onclick="selectState(this)">Assam</div>
+                <div class="suggestion-tag" onclick="selectState(this)">Andhra Pradesh</div>
+            </div>
+        </section>
+
+        <!-- WHY SANCHARI: enlarged & highlighted -->
+        <section id="whySanchari" class="why-section card highlight" aria-labelledby="whyTitle">
+            <div id="whyTitle" class="why-title">
+                <i class="fas fa-lightbulb" style="color:#F59E0B;"></i> Why SANCHARI — what makes us unique
+            </div>
+
+            <div class="why-list" role="list">
+                <div class="why-item" role="listitem">🍲 Instant Local Insights</div>
+                <div class="why-item" role="listitem">🎭 Cultural Tips</div>
+                <div class="why-item" role="listitem">📍 Food & Slang Fun</div>
+                <div class="why-item" role="listitem">💡 Weather & Safety Tips</div>
+            </div>
+
+            <div class="rolling-wrap" aria-hidden="false">
+                <div class="fade-edge left"></div>
+                <div class="fade-edge right"></div>
+
+                <div class="rolling-track" id="rollingTrack">
+                    <a href="index2.html?city=Munnar" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1546993948-1e205db4d9b7?w=800&auto=format&fit=crop" alt="Munnar Tea Plantations" title="Explore Munnar">
+                    </a>
+                    <a href="index2.html?city=Kochi" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1562769450-e96893eb64fb?w=800&auto=format&fit=crop" alt="Kochi" title="Explore Kochi">
+                    </a>
+                    <a href="index2.html?city=Mysore" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop" alt="Mysore Palace" title="Explore Mysore">
+                    </a>
+                    <a href="index2.html?city=Udaipur" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1574196287634-4d17f1ba544e?w=800&auto=format&fit=crop" alt="Udaipur Lake" title="Explore Udaipur">
+                    </a>
+                    <a href="index2.html?city=Gulmarg" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop" alt="Gulmarg Mountains" title="Explore Gulmarg">
+                    </a>
+                    <a href="index2.html?city=Agra" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop" alt="Taj Mahal Agra" title="Explore Agra">
+                    </a>
+                    <!-- duplicated set for smooth loop -->
+                    <a href="index2.html?city=Munnar" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1546993948-1e205db4d9b7?w=800&auto=format&fit=crop" alt="Munnar Tea Plantations" title="Explore Munnar">
+                    </a>
+                    <a href="index2.html?city=Kochi" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1562769450-e96893eb64fb?w=800&auto=format&fit=crop" alt="Kochi" title="Explore Kochi">
+                    </a>
+                    <a href="index2.html?city=Mysore" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop" alt="Mysore Palace" title="Explore Mysore">
+                    </a>
+                    <a href="index2.html?city=Udaipur" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1574196287634-4d17f1ba544e?w=800&auto=format&fit=crop" alt="Udaipur Lake" title="Explore Udaipur">
+                    </a>
+                    <a href="index2.html?city=Gulmarg" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop" alt="Gulmarg Mountains" title="Explore Gulmarg">
+                    </a>
+                    <a href="index2.html?city=Agra" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop" alt="Taj Mahal Agra" title="Explore Agra">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- State Sections (dynamically loaded from MongoDB) -->
+        <div id="statesSections"></div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>🌍 SANCHARI Travel Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <p>Hello! 👋 I'm your SANCHARI travel assistant. Ask me anything about Indian travel destinations, local food, culture, or tips!</p>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input 
+                    type="text" 
+                    class="chatbot-input" 
+                    id="chatbotInput" 
+                    placeholder="Ask about travel destinations..."
+                    autocomplete="off"
+                />
+                <button class="chatbot-send" id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let statesData = [];
+
+        // Fetch states data from API and render
+        async function loadStates() {
+            try {
+                const response = await fetch('/api/states');
+                const states = await response.json();
+                statesData = states;
+                
+                renderStateSections(states);
+            } catch (error) {
+                console.error('Error loading states:', error);
+            }
+        }
+
+        // Render state sections dynamically
+        function renderStateSections(states) {
+            const container = document.getElementById('statesSections');
+            
+            // List of cities that exist in the database
+            const availableCities = [
+                'Munnar', 'Kochi', 'Kochi (Cochin)', 'Alleppey', 'Alleppey (Alappuzha)',
+                'Ooty', 'Ooty (Ootacamund)', 'Mahabalipuram', 'Kodaikanal',
+                'Mysore', 'Coorg', 'Coorg (Kodagu)', 'Gokarna',
+                'Udaipur', 'Jaisalmer',
+                'Guwahati',
+                'Agra', 'Varanasi', 'Varanasi (Kashi)',
+                'Visakhapatnam',
+                'Srinagar', 'Gulmarg'
+            ];
+            
+            // Function to check if a place exists in database
+            function isCityAvailable(placeName) {
+                return availableCities.some(city => 
+                    city.toLowerCase().includes(placeName.toLowerCase()) ||
+                    placeName.toLowerCase().includes(city.toLowerCase())
+                );
+            }
+            
+            container.innerHTML = states.map(state => `
+                <section class="state-section" style="background-image: url('${state.image || ''}');">
+                    <div class="state-content">
+                        <div class="state-heading">
+                            <a href="index2.html?state=${encodeURIComponent(state.name)}" style="color: inherit; text-decoration: none;">
+                                ${state.name}
+                            </a>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <h2>Popular Places</h2>
+                                <ul>
+                                    ${(state.popularPlaces || []).map(place => {
+                                        if (isCityAvailable(place)) {
+                                            return `<li><a class="place-link" href="index2.html?city=${encodeURIComponent(place)}">${place}</a></li>`;
+                                        } else {
+                                            return `<li><span class="place-text">${place}</span></li>`;
+                                        }
+                                    }).join('')}
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h2>Hidden Places</h2>
+                                <ul>
+                                    ${(state.hiddenPlaces || []).map(place => {
+                                        if (isCityAvailable(place)) {
+                                            return `<li><a class="place-link" href="index2.html?city=${encodeURIComponent(place)}">${place}</a></li>`;
+                                        } else {
+                                            return `<li><span class="place-text">${place}</span></li>`;
+                                        }
+                                    }).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `).join('');
+        }
+
+        function selectState(el) {
+            // Remove active class from all tags
+            document.querySelectorAll('.suggestion-tag').forEach(tag => tag.classList.remove('active'));
+            // Add active class to clicked tag
+            el.classList.add('active');
+            
+            // Find matching state section and scroll to it
+            const stateName = el.textContent.trim();
+            const sections = document.querySelectorAll('.state-section');
+            sections.forEach(sec => {
+                const heading = sec.querySelector('.state-heading a');
+                if (heading && heading.textContent.trim() === stateName) {
+                    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = document.getElementById('destinationInput').value.trim();
+            if (query) {
+                const matchingTag = Array.from(document.querySelectorAll('.suggestion-tag'))
+                    .find(tag => tag.textContent.toLowerCase().includes(query.toLowerCase()));
+                if (matchingTag) {
+                    selectState(matchingTag);
+                }
+            }
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+        });
+
+        document.getElementById('destinationInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+            }
+        });
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            loadStates();
+        });
+
+        // Chatbot functionality
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.classList.add('open');
+            chatbotInput.focus();
+        });
+
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.classList.remove('open');
+        });
+
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.innerHTML = `<p>${text}</p>`;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="typing">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            `;
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        async function sendToGemini(userMessage) {
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: userMessage
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('API request failed');
+                }
+
+                const data = await response.json();
+                return data.response;
+            } catch (error) {
+                console.error('Chat API Error:', error);
+                return "Sorry, I'm having trouble connecting right now. Please try again later or explore our destination pages!";
+            }
+        }
+
+        async function handleUserMessage() {
+            const userMessage = chatbotInput.value.trim();
+            
+            if (!userMessage) return;
+            
+            // Add user message
+            addMessage(userMessage, true);
+            chatbotInput.value = '';
+            chatbotSend.disabled = true;
+            
+            // Show typing indicator
+            addTypingIndicator();
+            
+            // Get response from Gemini
+            const botResponse = await sendToGemini(userMessage);
+            
+            // Remove typing indicator and add bot response
+            removeTypingIndicator();
+            addMessage(botResponse);
+            chatbotSend.disabled = false;
+            chatbotInput.focus();
+        }
+
+        chatbotSend.addEventListener('click', handleUserMessage);
+
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserMessage();
+            }
+        });
+    </script>
+</body>
+</html>
