@@ -20,7 +20,7 @@ const getConnString = () => {
 };
 
 const MONGO_URI = getConnString();
-const DB_NAME = 'sanchari';
+const DB_NAME = 'travel_website';
 const STATES_COLL = 'states';
 const CITIES_COLL = 'cities';
 
@@ -99,18 +99,51 @@ app.get('/favicon.ico', (req, res) => {
   res.status(204).send(); // No content
 });
 
+// Health check endpoint
+app.get('/api/health', async (req, res) => {
+  try {
+    const healthStatus = {
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+      mongodb: mongodbConnected ? 'connected' : 'disconnected',
+      database: DB_NAME
+    };
+    
+    if (mongodbConnected) {
+      const stateCount = await statesColl.countDocuments();
+      const cityCount = await citiesColl.countDocuments();
+      healthStatus.data = { states: stateCount, cities: cityCount };
+    }
+    
+    res.json(healthStatus);
+  } catch (error) {
+    res.status(500).json({
+      status: 'error',
+      message: error.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
 // API Routes - STRICT MONGODB ONLY
 app.get('/api/states', async (req, res) => {
   try {
+    if (!mongodbConnected) {
+      return res.status(503).json({ error: 'Database not available' });
+    }
     const states = await statesColl.find({}).toArray();
     res.json(states);
   } catch (error) {
+    console.error('Error fetching states:', error);
     res.status(500).json({ error: 'Failed to fetch states from MongoDB', details: error.message });
   }
 });
 
 app.get('/api/states/:name', async (req, res) => {
   try {
+    if (!mongodbConnected) {
+      return res.status(503).json({ error: 'Database not available' });
+    }
     const stateName = req.params.name.replace(/_/g, ' ');
     const state = await statesColl.findOne({ name: { $regex: new RegExp(stateName, 'i') } });
     if (state) {
@@ -119,13 +152,41 @@ app.get('/api/states/:name', async (req, res) => {
       res.status(404).json({ error: 'State not found in database' });
     }
   } catch (error) {
+    console.error('Error fetching state:', error);
     res.status(500).json({ error: 'Failed to fetch state from MongoDB', details: error.message });
+  }
+});
+
+// Get all cities or cities by state_id
+app.get('/api/cities', async (req, res) => {
+  try {
+    if (!mongodbConnected) {
+      return res.status(503).json({ error: 'Database not available' });
+    }
+    
+    const { state_id } = req.query;
+    let query = {};
+    
+    if (state_id) {
+      query.state_id = state_id;
+    }
+    
+    const cities = await citiesColl.find(query).toArray();
+    console.log(`Found ${cities.length} cities${state_id ? ` for state_id: ${state_id}` : ''}`);
+    res.json(cities);
+  } catch (error) {
+    console.error('Error fetching cities:', error);
+    res.status(500).json({ error: 'Failed to fetch cities from MongoDB', details: error.message });
   }
 });
 
 // Get city-specific information from MongoDB
 app.get('/api/city/:city', async (req, res) => {
   try {
+    if (!mongodbConnected) {
+      return res.status(503).json({ error: 'Database not available' });
+    }
+    
     const cityName = decodeURIComponent(req.params.city.replace(/_/g, ' '));
     
     // Try multiple search patterns
@@ -160,6 +221,48 @@ app.get('/api/city/:city', async (req, res) => {
   } catch (error) {
     console.error('Error fetching city:', error);
     res.status(500).json({ error: 'Failed to fetch city from MongoDB', details: error.message });
+  }
+});
+
+// Get all cities from MongoDB
+app.get('/api/cities', async (req, res) => {
+  try {
+    if (!mongodbConnected) {
+      return res.status(503).json({ error: 'Database not available' });
+    }
+    const cities = await citiesColl.find({}).toArray();
+    res.json(cities);
+  } catch (error) {
+    console.error('Error fetching cities:', error);
+    res.status(500).json({ error: 'Failed to fetch cities from MongoDB', details: error.message });
+  }
+});
+
+// Get cities by state ID
+app.get('/api/states/:stateId/cities', async (req, res) => {
+  try {
+    if (!mongodbConnected) {
+      return res.status(503).json({ error: 'Database not available' });
+    }
+    
+    const stateId = req.params.stateId;
+    console.log(`🔍 Looking for cities in state: ${stateId}`);
+    
+    // Convert string to ObjectId
+    const { ObjectId } = require('mongodb');
+    let stateObjectId;
+    try {
+      stateObjectId = new ObjectId(stateId);
+    } catch (err) {
+      return res.status(400).json({ error: 'Invalid state ID format' });
+    }
+    
+    const cities = await citiesColl.find({ state_id: stateObjectId }).toArray();
+    console.log(`✅ Found ${cities.length} cities for state ${stateId}`);
+    res.json(cities);
+  } catch (error) {
+    console.error('Error fetching cities by state:', error);
+    res.status(500).json({ error: 'Failed to fetch cities by state', details: error.message });
   }
 });
 

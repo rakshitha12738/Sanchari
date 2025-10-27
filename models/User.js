@@ -2,7 +2,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 const bcrypt = require('bcryptjs');
 
 const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/';
-const DB_NAME = 'sanchari';
+const DB_NAME = 'travel_website';
 const USERS_COLL = 'users';
 
 class User {

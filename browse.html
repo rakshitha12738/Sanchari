@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse - SANCHARI Travel Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #6B8E23;
+      --primary-light: #8FBC3F;
+      --primary-dark: #556B2F;
+      --secondary: #9ACD32;
+      --accent: #708238;
+      --bg-gradient-start: #F5F8F0;
+      --bg-gradient-end: #E8F0DB;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.5);
+      --text-primary: #1E293B;
+      --text-secondary: #64748B;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(107, 142, 35, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(112, 130, 56, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-md);
+      z-index: 1000;
+    }
+    
+    nav h1 { 
+      color: var(--primary); 
+      font-size: 1.5rem; 
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    .nav-links a:hover { color: var(--primary); }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .search-container {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .search-box {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      border: 2px solid rgba(99, 102, 241, 0.2);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .search-btn:hover {
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .breadcrumb {
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .content-section {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      border: 1px solid rgba(99, 102, 241, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(45deg, var(--primary-light), var(--accent));
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .card-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .card-description {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .card-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .back-btn {
+      background: linear-gradient(135deg, var(--text-secondary) 0%, var(--text-primary) 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+    }
+
+    .loading i {
+      font-size: 2rem;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+    }
+
+    .empty-state i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .container { padding: 80px 15px 20px; }
+      .page-title { font-size: 2rem; }
+      .grid-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>SANCHARI</h1>
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="browse.html">🔍 Browse</a>
+      <a href="#" id="loginBtn">Login</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">Explore India</h1>
+      <p class="page-subtitle">Discover amazing destinations across the incredible states of India</p>
+    </div>
+
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search states or cities...">
+        <button class="search-btn" onclick="performSearch()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb" id="breadcrumb" style="display: none;">
+      <a href="#" onclick="showStates()">States</a> > <span id="breadcrumbCurrent"></span>
+    </div>
+
+    <!-- States View -->
+    <div class="content-section" id="statesSection">
+      <h2>Indian States</h2>
+      <div class="loading" id="statesLoading">
+        <i class="fas fa-spinner"></i>
+        <p>Loading states...</p>
+      </div>
+      <div class="grid-container" id="statesGrid" style="display: none;"></div>
+    </div>
+
+    <!-- Cities View -->
+    <div class="content-section" id="citiesSection" style="display: none;">
+      <button class="back-btn" onclick="showStates()">
+        <i class="fas fa-arrow-left"></i> Back to States
+      </button>
+      <h2 id="citiesTitle">Cities</h2>
+      <div class="loading" id="citiesLoading">
+        <i class="fas fa-spinner"></i>
+        <p>Loading cities...</p>
+      </div>
+      <div class="grid-container" id="citiesGrid" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- User Menu -->
+  <div id="userMenu" style="display: none; position: fixed; right: 20px; top: 70px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;">
+    <div style="padding: 15px; border-bottom: 1px solid #eee;">
+      <strong id="userDisplayName"></strong>
+    </div>
+    <div style="padding: 15px;">
+      <a href="#" onclick="handleLogout()" style="color: var(--primary); text-decoration: none;">Logout</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+  <script>
+    let statesData = [];
+    let citiesData = [];
+    let currentState = null;
+
+    // Authentication check
+    window.addEventListener('DOMContentLoaded', () => {
+      const token = Cookies.get('token');
+      if (!token) {
+        window.location.href = 'login.html';
+        return;
+      }
+      updateNavbarUser();
+      loadStates();
+    });
+
+    function updateNavbarUser() {
+      const userName = Cookies.get('userName');
+      const loginBtn = document.getElementById('loginBtn');
+      if (userName && loginBtn) {
+        loginBtn.textContent = userName;
+        loginBtn.onclick = function(e) {
+          e.preventDefault();
+          const userMenu = document.getElementById('userMenu');
+          userMenu.style.display = userMenu.style.display === 'none' ? 'block' : 'none';
+        };
+        
+        const userDisplayName = document.getElementById('userDisplayName');
+        if (userDisplayName) {
+          userDisplayName.textContent = userName;
+        }
+      }
+    }
+
+    function handleLogout() {
+      Cookies.remove('token');
+      Cookies.remove('userName');
+      Cookies.remove('userEmail');
+      window.location.href = 'login.html';
+    }
+
+    // Load all states
+    async function loadStates() {
+      try {
+        const response = await fetch('/api/states');
+        if (!response.ok) throw new Error('Failed to fetch states');
+        
+        statesData = await response.json();
+        console.log('Loaded states:', statesData.length);
+        displayStates(statesData);
+      } catch (error) {
+        console.error('Error loading states:', error);
+        document.getElementById('statesLoading').innerHTML = `
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>Failed to load states. Please try again.</p>
+        `;
+      }
+    }
+
+    // Display states
+    function displayStates(states) {
+      const loading = document.getElementById('statesLoading');
+      const grid = document.getElementById('statesGrid');
+      const breadcrumb = document.getElementById('breadcrumb');
+      
+      loading.style.display = 'none';
+      grid.style.display = 'grid';
+      breadcrumb.style.display = 'none';
+      
+      if (states.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <i class="fas fa-map"></i>
+            <h3>No states found</h3>
+            <p>Try a different search term</p>
+          </div>
+        `;
+        return;
+      }
+      
+      grid.innerHTML = states.map(state => `
+        <div class="card" onclick="loadCitiesForState('${state._id}', '${state.name}')">
+          <div class="card-image" style="background: linear-gradient(45deg, var(--primary-light), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+            🗺️
+          </div>
+          <div class="card-content">
+            <div class="card-title">${state.name}</div>
+            <div class="card-description">Explore cities and destinations in ${state.name}</div>
+            <div class="card-stats">
+              <span>🏙️ Multiple Cities</span>
+              <span>📍 Click to explore</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Load cities for a specific state
+    async function loadCitiesForState(stateId, stateName) {
+      currentState = { id: stateId, name: stateName };
+      
+      // Show cities section and hide states section
+      document.getElementById('statesSection').style.display = 'none';
+      document.getElementById('citiesSection').style.display = 'block';
+      document.getElementById('citiesTitle').textContent = `Cities in ${stateName}`;
+      document.getElementById('breadcrumb').style.display = 'block';
+      document.getElementById('breadcrumbCurrent').textContent = stateName;
+      
+      // Show loading
+      document.getElementById('citiesLoading').style.display = 'block';
+      document.getElementById('citiesGrid').style.display = 'none';
+      
+      try {
+        // Fetch cities for this state using the correct endpoint
+        const response = await fetch(`/api/states/${stateId}/cities`);
+        let cities = [];
+        
+        if (response.ok) {
+          cities = await response.json();
+        } else {
+          console.error('Failed to fetch cities for state:', response.status, response.statusText);
+          // Fallback: get all cities and filter by state_id
+          const allCitiesResponse = await fetch('/api/cities');
+          if (allCitiesResponse.ok) {
+            const allCities = await allCitiesResponse.json();
+            cities = allCities.filter(city => city.state_id === stateId);
+          }
+        }
+        
+        console.log(`Loaded ${cities.length} cities for ${stateName}`);
+        displayCities(cities);
+      } catch (error) {
+        console.error('Error loading cities:', error);
+        document.getElementById('citiesLoading').innerHTML = `
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>Failed to load cities. Please try again.</p>
+        `;
+      }
+    }
+
+    // Display cities
+    function displayCities(cities) {
+      const loading = document.getElementById('citiesLoading');
+      const grid = document.getElementById('citiesGrid');
+      
+      loading.style.display = 'none';
+      grid.style.display = 'grid';
+      
+      if (cities.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <i class="fas fa-city"></i>
+            <h3>No cities found</h3>
+            <p>Cities data will be available soon for this state</p>
+          </div>
+        `;
+        return;
+      }
+      
+      grid.innerHTML = cities.map(city => {
+        const placesCount = city.popular_places ? city.popular_places.length : 0;
+        const hasData = placesCount > 0;
+        
+        return `
+          <div class="card" onclick="viewCityDetails('${city.name}')">
+            <div class="card-image" style="background: linear-gradient(45deg, var(--secondary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              🏙️
+            </div>
+            <div class="card-content">
+              <div class="card-title">${city.name}</div>
+              <div class="card-subtitle">${currentState.name}</div>
+              <div class="card-description">
+                ${hasData ? 'Discover amazing places, local cuisine, and cultural experiences' : 'Explore this beautiful destination'}
+              </div>
+              <div class="card-stats">
+                <span>📍 ${placesCount} Places</span>
+                <span>👆 Click to explore</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // View city details
+    function viewCityDetails(cityName) {
+      // Navigate to the detailed city page
+      window.location.href = `index2.html?city=${encodeURIComponent(cityName)}`;
+    }
+
+    // Show states (back navigation)
+    function showStates() {
+      document.getElementById('citiesSection').style.display = 'none';
+      document.getElementById('statesSection').style.display = 'block';
+      document.getElementById('breadcrumb').style.display = 'none';
+      currentState = null;
+    }
+
+    // Search functionality
+    function performSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      
+      if (!query) {
+        displayStates(statesData);
+        return;
+      }
+      
+      // Search in states
+      const filteredStates = statesData.filter(state => 
+        state.name.toLowerCase().includes(query)
+      );
+      
+      displayStates(filteredStates);
+    }
+
+    // Search on Enter key
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        performSearch();
+      }
+    });
+
+    // Real-time search
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const query = this.value.toLowerCase().trim();
+      if (query.length === 0) {
+        displayStates(statesData);
+      } else if (query.length >= 2) {
+        performSearch();
+      }
+    });
+  </script>
+</body>
+</html>

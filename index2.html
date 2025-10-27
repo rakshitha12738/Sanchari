@@ -9,16 +9,16 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     :root {
-      /* Color Palette matching index.html */
-      --primary: #6366F1;
-      --primary-light: #818CF8;
-      --primary-dark: #4F46E5;
-      --secondary: #F59E0B;
-      --accent: #EC4899;
+      /* Olive Green Color Palette */
+      --primary: #6B8E23;
+      --primary-light: #8FBC3F;
+      --primary-dark: #556B2F;
+      --secondary: #9ACD32;
+      --accent: #708238;
       
       /* Backgrounds */
-      --bg-gradient-start: #F0F9FF;
-      --bg-gradient-end: #FEF3C7;
+      --bg-gradient-start: #F5F8F0;
+      --bg-gradient-end: #E8F0DB;
       --glass-bg: rgba(255, 255, 255, 0.85);
       --glass-border: rgba(255, 255, 255, 0.5);
       
@@ -50,8 +50,8 @@
       right: 0;
       bottom: 0;
       background: 
-        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(107, 142, 35, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(112, 130, 56, 0.08) 0%, transparent 50%);
       pointer-events: none;
       z-index: 0;
     }
@@ -397,6 +397,10 @@
   <header>
     <h1>Discover the World</h1>
     <p>Explore breathtaking places, flavors, and adventures across the globe.</p>
+    <div style="margin-top: 2rem; position: relative; z-index: 100; text-align: center;">
+      <button id="popularBtn" onclick="testPopularClick()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" style="margin-right: 1rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #fff; border: 2px solid #fff; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; position: relative; z-index: 101; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">🌟 Popular Places</button>
+      <button id="hiddenBtn" onclick="testHiddenClick()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" style="background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%); color: #fff; border: 2px solid #fff; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; position: relative; z-index: 101; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">💎 Hidden Places</button>
+    </div>
   </header>
 
   <section class="summary-section">
@@ -407,6 +411,17 @@
       <div class="card"><h3>🌄 Adventure</h3><p>Thrills and explorations that spark your soul.</p><button onclick="scrollToSection(3)">Learn More</button></div>
       <div class="card"><h3>🛡️ Safety</h3><p>Smart tips for safe, stress-free travel.</p><button onclick="scrollToSection(4)">Learn More</button></div>
     </div>
+  </section>
+
+  <!-- Popular/Hidden Places Sections -->
+  <section id="popularPlacesSection" style="display: none; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);">
+    <h2 style="text-align: center; font-size: 2.2rem; color: var(--text-primary); margin-bottom: 2rem;">Popular Places</h2>
+    <div id="popularPlacesList" style="max-width: 1200px; margin: 0 auto;"></div>
+  </section>
+  
+  <section id="hiddenPlacesSection" style="display: none; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);">
+    <h2 style="text-align: center; font-size: 2.2rem; color: var(--text-primary); margin-bottom: 2rem;">Hidden Places</h2>
+    <div id="hiddenPlacesList" style="max-width: 1200px; margin: 0 auto;"></div>
   </section>
 
   <section class="section" id="section1">
@@ -461,6 +476,169 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <script>
+    // Global error handler
+    window.addEventListener('error', function(e) {
+      console.error('Global error:', e.error);
+      // You could send this to a logging service
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+      console.error('Unhandled promise rejection:', e.reason);
+      // Prevent the default browser behavior
+      e.preventDefault();
+    });
+
+    // Immediate debug test
+    console.log('JavaScript is running!');
+    window.addEventListener('load', function() {
+      console.log('Window loaded, testing button access...');
+      const popularBtn = document.getElementById('popularBtn');
+      const hiddenBtn = document.getElementById('hiddenBtn');
+      console.log('Buttons found:', { popularBtn, hiddenBtn });
+      
+      if (popularBtn) {
+        console.log('Popular button styles:', window.getComputedStyle(popularBtn));
+      }
+    });
+
+    // Test functions for immediate button response
+    function testPopularClick() {
+      console.log('Popular button clicked directly via onclick');
+      
+      const popularSection = document.getElementById('popularPlacesSection');
+      const hiddenSection = document.getElementById('hiddenPlacesSection');
+      
+      if (popularSection && hiddenSection) {
+        popularSection.style.display = 'block';
+        hiddenSection.style.display = 'none';
+        
+        setTimeout(() => {
+          popularSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+        
+        // Update button styling
+        updateButtonStates('popular');
+      } else {
+        console.error('Sections not found:', { popularSection, hiddenSection });
+      }
+    }
+    
+    function testHiddenClick() {
+      console.log('Hidden button clicked directly via onclick');
+      
+      const popularSection = document.getElementById('popularPlacesSection');
+      const hiddenSection = document.getElementById('hiddenPlacesSection');
+      
+      if (popularSection && hiddenSection) {
+        hiddenSection.style.display = 'block';
+        popularSection.style.display = 'none';
+        
+        setTimeout(() => {
+          hiddenSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+        
+        // Update button styling
+        updateButtonStates('hidden');
+      } else {
+        console.error('Sections not found:', { popularSection, hiddenSection });
+      }
+    }
+    
+    function updateButtonStates(active) {
+      const popularBtn = document.getElementById('popularBtn');
+      const hiddenBtn = document.getElementById('hiddenBtn');
+      
+      if (popularBtn && hiddenBtn) {
+        if (active === 'popular') {
+          popularBtn.style.background = 'linear-gradient(135deg, #4F46E5 0%, #F59E0B 100%)';
+          hiddenBtn.style.background = 'linear-gradient(135deg, #ccc 0%, #999 100%)';
+        } else {
+          hiddenBtn.style.background = 'linear-gradient(135deg, #EC4899 0%, #4F46E5 100%)';
+          popularBtn.style.background = 'linear-gradient(135deg, #ccc 0%, #999 100%)';
+        }
+      }
+    }
+
+    // Popular/Hidden Places Button Logic
+    function initializeButtons() {
+      const popularBtn = document.getElementById('popularBtn');
+      const hiddenBtn = document.getElementById('hiddenBtn');
+      const popularSection = document.getElementById('popularPlacesSection');
+      const hiddenSection = document.getElementById('hiddenPlacesSection');
+      
+      console.log('Initializing buttons:', { popularBtn, hiddenBtn, popularSection, hiddenSection });
+      
+      if (popularBtn && hiddenBtn && popularSection && hiddenSection) {
+        // Remove any existing event listeners
+        popularBtn.replaceWith(popularBtn.cloneNode(true));
+        hiddenBtn.replaceWith(hiddenBtn.cloneNode(true));
+        
+        // Get the new button references
+        const newPopularBtn = document.getElementById('popularBtn');
+        const newHiddenBtn = document.getElementById('hiddenBtn');
+        
+        newPopularBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Popular Places button clicked');
+          
+          // Check if section has content
+          const popularContent = document.getElementById('popularPlacesList');
+          if (!popularContent || popularContent.innerHTML.trim() === '') {
+            console.log('No popular places content found');
+            alert('Popular Places data is not available for this destination yet.');
+            return;
+          }
+          
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => this.style.transform = 'scale(1)', 150);
+          
+          popularSection.style.display = 'block';
+          hiddenSection.style.display = 'none';
+          
+          newPopularBtn.style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)';
+          newHiddenBtn.style.background = 'linear-gradient(135deg, #ccc 0%, #999 100%)';
+          
+          setTimeout(() => {
+            popularSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 200);
+        });
+        
+        newHiddenBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Hidden Places button clicked');
+          
+          // Check if section has content
+          const hiddenContent = document.getElementById('hiddenPlacesList');
+          if (!hiddenContent || hiddenContent.innerHTML.trim() === '') {
+            console.log('No hidden places content found');
+            alert('Hidden Places data is not available for this destination yet.');
+            return;
+          }
+          
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => this.style.transform = 'scale(1)', 150);
+          
+          hiddenSection.style.display = 'block';
+          popularSection.style.display = 'none';
+          
+          newHiddenBtn.style.background = 'linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%)';
+          newPopularBtn.style.background = 'linear-gradient(135deg, #ccc 0%, #999 100%)';
+          
+          setTimeout(() => {
+            hiddenSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 200);
+        });
+        
+        console.log('Button event listeners added successfully');
+      } else {
+        console.error('Could not find button elements:', { popularBtn, hiddenBtn, popularSection, hiddenSection });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeButtons();
+    });
+
     // Check authentication on page load
     window.addEventListener('DOMContentLoaded', () => {
         const token = Cookies.get('token');
@@ -469,6 +647,7 @@
             window.location.href = 'login.html';
             return;
         }
+        
         // User is logged in, show user name in navbar
         updateNavbarUser();
         
@@ -515,6 +694,13 @@
     let cityData = null;
     let statesData = [];
 
+    // Sanitize image URLs coming from the database: trim whitespace and remove newlines
+    function sanitizeImageUrl(url) {
+      if (!url || typeof url !== 'string') return '';
+      // Remove surrounding whitespace and any newline characters that may have been introduced
+      return url.replace(/\s+/g, ' ').trim();
+    }
+
     // Fetch city data from API
     async function loadCityData(cityName) {
       try {
@@ -538,27 +724,58 @@
     function updatePageWithCityData() {
       if (!cityData) return;
 
+      // Handle new data structure with popular_places array
+      const placeData = cityData.popular_places && cityData.popular_places.length > 0 
+        ? cityData.popular_places[0] 
+        : cityData;
+
       // Update header
       document.querySelector('header h1').textContent = `Discover ${cityData.name}`;
-      document.querySelector('header p').textContent = cityData.description;
+      
+      // Set description from history if available
+      const historyText = placeData.history ? placeData.history.text : 
+                         (cityData.description || 'Explore this amazing destination');
+      document.querySelector('header p').textContent = historyText.substring(0, 200) + '...';
 
       // Update summary cards
       const cards = document.querySelectorAll('.cards .card');
       if (cards.length >= 4) {
-        cards[0].querySelector('p').textContent = cityData.history || 'Rich heritage and culture';
-        cards[1].querySelector('p').textContent = `Taste local delicacies: ${cityData.food ? cityData.food.join(', ') : 'Local cuisine'}`;
-        cards[2].querySelector('p').textContent = `Activities: ${cityData.activities ? cityData.activities.join(', ') : 'Adventure awaits'}`;
-        cards[3].querySelector('p').textContent = `Safety: ${cityData.safety || 'Generally safe'}`;
+        // History card
+        cards[0].querySelector('p').textContent = placeData.history ? 
+          placeData.history.text.substring(0, 100) + '...' : 'Rich heritage and culture';
+        
+        // Food card
+        const cuisineText = placeData.localCuisine && placeData.localCuisine.length > 0 ?
+          placeData.localCuisine[0].name.substring(0, 100) + '...' :
+          `Taste local delicacies of ${cityData.name}`;
+        cards[1].querySelector('p').textContent = cuisineText;
+        
+        // Activities card
+        const activitiesText = placeData.activities && placeData.activities.length > 0 ?
+          placeData.activities[0].name.substring(0, 100) + '...' :
+          'Adventure awaits you here';
+        cards[2].querySelector('p').textContent = activitiesText;
+        
+        // Safety card
+        const safetyText = placeData.safetyTips && placeData.safetyTips.length > 0 ?
+          placeData.safetyTips[0].tip.substring(0, 100) + '...' :
+          'Travel safely and enjoy your trip';
+        cards[3].querySelector('p').textContent = safetyText;
       }
 
       // Update sections
       const sections = document.querySelectorAll('.section');
       
       // Section 1: History
-      if (sections[0]) {
+      if (sections[0] && placeData.history) {
         const img = sections[0].querySelector('img');
-        if (cityData.image && img) {
-          img.src = cityData.image;
+        if (img) {
+          // Use fallback image if the original doesn't exist or is a placeholder
+          if (placeData.history.image && !placeData.history.image.includes('yourbucket.com')) {
+            img.src = sanitizeImageUrl(placeData.history.image);
+          } else {
+            img.src = 'https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80';
+          }
           img.alt = cityData.name + ' - History';
           img.onerror = function() {
             this.src = 'https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80';
@@ -566,47 +783,54 @@
         }
         const text = sections[0].querySelector('.text p');
         if (text) {
-          text.textContent = cityData.details || cityData.description;
+          text.textContent = placeData.history.text;
         }
       }
 
       // Section 2: Food
-      if (sections[1]) {
+      if (sections[1] && placeData.localCuisine) {
         const img = sections[1].querySelector('img');
-        if (img && cityData.image) {
-          img.src = cityData.image;
+        if (img) {
+          if (placeData.localCuisine[0] && placeData.localCuisine[0].image && !placeData.localCuisine[0].image.includes('yourbucket.com')) {
+            img.src = sanitizeImageUrl(placeData.localCuisine[0].image);
+          } else {
+            img.src = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';
+          }
           img.alt = cityData.name + ' - Food';
           img.onerror = function() {
             this.src = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';
           };
         }
         const text = sections[1].querySelector('.text');
-        if (text && cityData.food) {
-          text.querySelector('p').textContent = `Must-try dishes: ${cityData.food.join(', ')}`;
+        if (text && placeData.localCuisine.length > 0) {
+          text.querySelector('p').textContent = placeData.localCuisine[0].name;
         }
       }
 
-      // Section 3: Adventure
-      if (sections[2]) {
+      // Section 3: Adventure/Activities
+      if (sections[2] && placeData.activities) {
         const img = sections[2].querySelector('img');
-        if (img && cityData.image) {
-          img.src = cityData.image;
+        if (img) {
+          if (placeData.activities[0] && placeData.activities[0].image && !placeData.activities[0].image.includes('yourbucket.com')) {
+            img.src = sanitizeImageUrl(placeData.activities[0].image);
+          } else {
+            img.src = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80';
+          }
           img.alt = cityData.name + ' - Adventure';
           img.onerror = function() {
             this.src = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80';
           };
         }
         const text = sections[2].querySelector('.text');
-        if (text && cityData.activities) {
-          text.querySelector('p').textContent = `Top activities: ${cityData.activities.join(', ')}`;
+        if (text && placeData.activities.length > 0) {
+          text.querySelector('p').textContent = placeData.activities[0].name;
         }
       }
 
       // Section 4: Safety
-      if (sections[3]) {
+      if (sections[3] && placeData.safetyTips) {
         const img = sections[3].querySelector('img');
-        if (img && cityData.image) {
-          img.src = cityData.image;
+        if (img) {
           img.alt = cityData.name + ' - Safety';
           img.onerror = function() {
             this.src = 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80';
@@ -614,32 +838,185 @@
         }
         const text = sections[3].querySelector('.text');
         if (text) {
-          text.querySelector('p').textContent = `Best time to visit: ${cityData.bestTime || 'Year-round'}. Weather: ${cityData.weather || 'Varies by season'}`;
+          const safetyList = placeData.safetyTips.map(tip => `• ${tip.tip}`).join('\n');
+          text.querySelector('p').textContent = safetyList;
         }
       }
 
-      // Section 5: Attractions
-      if (sections[4]) {
+      // Section 5: Nearby Attractions
+      if (sections[4] && placeData.nearbyAttractions) {
         const img = sections[4].querySelector('img');
-        if (img && cityData.image) {
-          img.src = cityData.image;
+        if (img) {
+          if (placeData.nearbyAttractions[0] && placeData.nearbyAttractions[0].image && !placeData.nearbyAttractions[0].image.includes('yourbucket.com')) {
+            img.src = sanitizeImageUrl(placeData.nearbyAttractions[0].image);
+          } else {
+            img.src = 'https://images.unsplash.com/photo-1539650116574-75c0c6d35fd8?auto=format&fit=crop&w=800&q=80';
+          }
           img.alt = cityData.name + ' - Attractions';
           img.onerror = function() {
-            this.src = 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80';
+            this.src = 'https://images.unsplash.com/photo-1539650116574-75c0c6d35fd8?auto=format&fit=crop&w=800&q=80';
           };
         }
         const text = sections[4].querySelector('.text');
-        if (text && cityData.highlights) {
-          text.querySelector('p').textContent = `Must-visit: ${cityData.highlights.join(', ')}`;
+        if (text && placeData.nearbyAttractions.length > 0) {
+          text.querySelector('p').textContent = placeData.nearbyAttractions[0].name;
         }
       }
 
-      // Update background image
-      const header = document.querySelector('header');
-      if (header && cityData.image) {
-        header.style.backgroundImage = `url('${cityData.image}')`;
-        console.log('Updated header background to:', cityData.image);
+      // Populate Popular Places Section
+      const popularList = document.getElementById('popularPlacesList');
+      const hiddenList = document.getElementById('hiddenPlacesList');
+      
+      console.log('City data for places:', { cityData, hasPopular: cityData.popular_places?.length, hasHidden: cityData.hidden_places?.length });
+      
+      if (popularList) {
+        if (cityData.popular_places && cityData.popular_places.length > 0) {
+          popularList.innerHTML = '';
+          cityData.popular_places.forEach(place => {
+            const placeCard = createPlaceCard(place, 'popular');
+            popularList.appendChild(placeCard);
+          });
+          console.log('Popular places populated:', cityData.popular_places.length);
+        } else {
+          popularList.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-secondary);"><h3>No Popular Places Data Available</h3><p>Popular places information will be available soon for this destination.</p></div>';
+        }
       }
+      
+      if (hiddenList) {
+        if (cityData.hidden_places && cityData.hidden_places.length > 0) {
+          hiddenList.innerHTML = '';
+          cityData.hidden_places.forEach(place => {
+            const placeCard = createPlaceCard(place, 'hidden');
+            hiddenList.appendChild(placeCard);
+          });
+          console.log('Hidden places populated:', cityData.hidden_places.length);
+        } else {
+          hiddenList.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-secondary);"><h3>No Hidden Places Data Available</h3><p>Hidden gems information will be available soon for this destination.</p></div>';
+        }
+      }
+      
+      // Re-initialize buttons after data is loaded
+      setTimeout(() => {
+        initializeButtons();
+      }, 100);
+    }
+
+    // Helper function to create detailed place cards
+    function createPlaceCard(place, type) {
+      const card = document.createElement('div');
+      card.style.cssText = `
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-lg);
+        margin-bottom: 2rem;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      `;
+      
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+        card.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.15)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'var(--shadow-lg)';
+      });
+
+      // Function to get fallback image based on content type
+      function getFallbackImage(contentType) {
+        const fallbacks = {
+          history: 'https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80',
+          cuisine: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
+          activities: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
+          attractions: 'https://images.unsplash.com/photo-1539650116574-75c0c6d35fd8?auto=format&fit=crop&w=800&q=80',
+          default: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
+        };
+        return fallbacks[contentType] || fallbacks.default;
+      }
+
+      // small helper to sanitize URLs when embedding into HTML
+      const s = (u) => sanitizeImageUrl(u);
+
+      let content = `<div style="padding: 2rem;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary); font-weight: 600;">${place.name}</h3>`;
+
+      // History Section
+      if (place.history) {
+        content += `
+          <div style="margin-bottom: 2rem;">
+            <h4 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center;">
+              🏛️ History
+            </h4>
+            ${place.history.image && !place.history.image.includes('yourbucket.com') ? `<img src="${s(place.history.image)}" alt="${place.name} History" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;" onerror="this.src='${getFallbackImage('history')}'">` : `<img src="${getFallbackImage('history')}" alt="${place.name} History" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;">`}
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">${place.history.text}</p>
+          </div>`;
+      }
+
+      // Local Cuisine Section
+      if (place.localCuisine && place.localCuisine.length > 0) {
+        content += `
+          <div style="margin-bottom: 2rem;">
+            <h4 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center;">
+              🍲 Local Cuisine
+            </h4>`;
+        place.localCuisine.forEach(cuisine => {
+          content += `
+            ${cuisine.image ? `<img src="${s(cuisine.image)}" alt="${cuisine.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;" onerror="this.src='${getFallbackImage('cuisine')}'">` : `<img src="${getFallbackImage('cuisine')}" alt="${cuisine.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;">`}
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">${cuisine.name}</p>`;
+        });
+        content += `</div>`;
+      }
+
+      // Activities Section
+      if (place.activities && place.activities.length > 0) {
+        content += `
+          <div style="margin-bottom: 2rem;">
+            <h4 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center;">
+              🌄 Activities
+            </h4>`;
+        place.activities.forEach(activity => {
+          content += `
+            ${activity.image ? `<img src="${s(activity.image)}" alt="${activity.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;" onerror="this.src='${getFallbackImage('activities')}'">` : `<img src="${getFallbackImage('activities')}" alt="${activity.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;">`}
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">${activity.name}</p>`;
+        });
+        content += `</div>`;
+      }
+
+      // Safety Tips Section
+      if (place.safetyTips && place.safetyTips.length > 0) {
+        content += `
+          <div style="margin-bottom: 2rem;">
+            <h4 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center;">
+              🛡️ Safety Tips
+            </h4>
+            <ul style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; padding-left: 1.2rem;">`;
+        place.safetyTips.forEach(tip => {
+          content += `<li style="margin-bottom: 0.5rem;">${tip.tip}</li>`;
+        });
+        content += `</ul></div>`;
+      }
+
+      // Nearby Attractions Section
+      if (place.nearbyAttractions && place.nearbyAttractions.length > 0) {
+        content += `
+          <div style="margin-bottom: 1rem;">
+            <h4 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center;">
+              📍 Nearby Attractions
+            </h4>`;
+        place.nearbyAttractions.forEach(attraction => {
+          content += `
+            ${attraction.image ? `<img src="${s(attraction.image)}" alt="${attraction.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;" onerror="this.src='${getFallbackImage('attractions')}'">` : `<img src="${getFallbackImage('attractions')}" alt="${attraction.name}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 1rem;">`}
+            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">${attraction.name}</p>`;
+        });
+        content += `</div>`;
+      }
+
+      content += `</div>`;
+      card.innerHTML = content;
+      return card;
     }
 
     // Fetch states data from API

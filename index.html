@@ -13,18 +13,18 @@
         * { margin:0; padding:0; box-sizing:border-box; }
         html,body { height:100%; scroll-behavior: smooth; }
         :root{
-            /* Sophisticated Color Palette */
-            --primary: #6366F1;        /* Vibrant Indigo */
-            --primary-light: #818CF8;  /* Light Indigo */
-            --primary-dark: #4F46E5;   /* Dark Indigo */
-            --secondary: #F59E0B;      /* Warm Amber */
-            --secondary-light: #FCD34D; /* Light Amber */
-            --accent: #EC4899;         /* Vibrant Pink */
-            --accent-light: #F9A8D4;   /* Light Pink */
+            /* Olive Green Color Palette */
+            --primary: #6B8E23;        /* Olive Green */
+            --primary-light: #8FBC3F;  /* Light Olive */
+            --primary-dark: #556B2F;   /* Dark Olive */
+            --secondary: #9ACD32;      /* Yellow Green */
+            --secondary-light: #B5D96C; /* Light Yellow Green */
+            --accent: #708238;         /* Muted Olive */
+            --accent-light: #A4B968;   /* Light Muted Olive */
             
             /* Backgrounds */
-            --bg-gradient-start: #F0F9FF; /* Sky Blue */
-            --bg-gradient-end: #FEF3C7;   /* Warm Yellow */
+            --bg-gradient-start: #F5F8F0; /* Light Olive Cream */
+            --bg-gradient-end: #E8F0DB;   /* Pale Olive */
             --bg-overlay: rgba(255, 255, 255, 0.65);
             
             /* Neutrals */
@@ -51,9 +51,10 @@
             color: var(--text-primary);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            padding: 28px 16px;
+            padding: 18px 0px;
             position: relative;
             overflow-x: hidden;
+
         }
         
         body::before {
@@ -64,18 +65,18 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(107, 142, 35, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(112, 130, 56, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(143, 188, 63, 0.08) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
 
         .container{ 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            position: relative; 
-            z-index: 1;
+                    max-width: 1400px;
+                        margin: 0 auto 60px auto;
+                        position: relative;
+                        z-index: 1;
         }
 
         /* Navigation Bar */
@@ -128,8 +129,10 @@
         .navbar-menu a {
             color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 1.08rem;
+            letter-spacing: 0.5px;
+            font-family: 'Playfair Display', serif;
             transition: all 0.3s ease;
             position: relative;
             padding: 4px 0;
@@ -298,7 +301,7 @@
             font-weight: 600;
             font-size: 1.05rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 8px 24px rgba(107, 142, 35, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -320,7 +323,7 @@
         
         .header .explore-link:hover{
             transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 12px 32px rgba(107, 142, 35, 0.4);
         }
         
         @keyframes fadeInDown {
@@ -372,7 +375,7 @@
             min-width: 320px; 
             padding: 16px 24px; 
             border-radius: 50px; 
-            border: 2px solid rgba(99, 102, 241, 0.15);
+            border: 2px solid rgba(107, 142, 35, 0.15);
             background: white; 
             color: var(--text-primary); 
             font-size: 1rem;
@@ -387,7 +390,7 @@
         
         .search-input:focus{ 
             outline: none; 
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 8px 24px rgba(99, 102, 241, 0.15); 
+            box-shadow: 0 0 0 4px rgba(107, 142, 35, 0.1), 0 8px 24px rgba(107, 142, 35, 0.15); 
             transform: translateY(-2px); 
             border-color: var(--primary);
         }
@@ -401,7 +404,7 @@
             color: white; 
             font-weight: 600;
             font-size: 1rem;
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 8px 24px rgba(107, 142, 35, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -427,7 +430,7 @@
         
         .search-btn:hover{
             transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 12px 32px rgba(107, 142, 35, 0.4);
         }
         
         @keyframes fadeIn {
@@ -456,7 +459,7 @@
             color: var(--text-primary);
             background: white;
             font-weight: 600; 
-            border: 2px solid rgba(99, 102, 241, 0.2);
+            border: 2px solid rgba(107, 142, 35, 0.2);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: var(--shadow-sm);
             position: relative;
@@ -667,7 +670,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(107, 142, 35, 0.3) 0%, rgba(112, 130, 56, 0.3) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -725,7 +728,7 @@
             content: ""; 
             position: absolute; 
             inset: 0; 
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.7) 0%, rgba(236, 72, 153, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(107, 142, 35, 0.7) 0%, rgba(112, 130, 56, 0.6) 100%);
             border-radius: 32px; 
             z-index: 0; 
             transition: opacity 0.4s ease;
@@ -854,7 +857,12 @@
 
         @media (max-width:900px){
             .header h1{ 
-                font-size: 2.5rem; 
+                font-size: 2.2rem; 
+            }
+            .container {
+                width: 100vw;
+                max-width: 100vw;
+                padding: 0;
             }
             .search-input{ 
                 min-width: 100%; 
@@ -866,34 +874,34 @@
                 width: 100%;
             }
             .rolling-img{ 
-                width: 260px; 
-                height: 160px; 
+                width: 220px; 
+                height: 120px; 
             }
             .state-heading { 
-                font-size: 32px; 
+                font-size: 28px; 
             }
             .state-content .state-heading a {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             h2 { 
-                font-size: 20px; 
+                font-size: 18px; 
             }
             li { 
-                font-size: 15px; 
+                font-size: 14px; 
             }
             .why-title {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             .state-section {
-                padding: 30px 20px;
-                min-height: 380px;
+                padding: 18px 6px;
+                min-height: 320px;
             }
             .chatbot-window {
-                width: calc(100% - 20px);
-                right: 10px;
-                left: 10px;
-                bottom: 90px;
-                height: 500px;
+                width: calc(100% - 10px);
+                right: 5px;
+                left: 5px;
+                bottom: 60px;
+                height: 400px;
             }
         }
 
@@ -909,19 +917,19 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #6366F1, #EC4899);
+            background: linear-gradient(135deg, #6B8E23, #708238);
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 8px 24px rgba(107, 142, 35, 0.4);
             transition: all 0.3s ease;
         }
 
         .chatbot-toggle:hover {
             transform: scale(1.1);
-            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 12px 32px rgba(107, 142, 35, 0.5);
         }
 
         .chatbot-toggle i {
@@ -960,7 +968,7 @@
         }
 
         .chatbot-header {
-            background: linear-gradient(135deg, #6366F1, #EC4899);
+            background: linear-gradient(135deg, #6B8E23, #708238);
             color: white;
             padding: 20px;
             display: flex;
@@ -1018,7 +1026,7 @@
 
         .message.user {
             align-self: flex-end;
-            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            background: linear-gradient(135deg, #6B8E23, #556B2F);
             color: white;
             border-bottom-right-radius: 4px;
         }
@@ -1044,7 +1052,7 @@
         .message.bot .typing span {
             width: 8px;
             height: 8px;
-            background: #6366F1;
+            background: #6B8E23;
             border-radius: 50%;
             animation: typing 1.4s infinite;
         }
@@ -1086,14 +1094,14 @@
         }
 
         .chatbot-input:focus {
-            border-color: #6366F1;
+            border-color: #6B8E23;
         }
 
         .chatbot-send {
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            background: linear-gradient(135deg, #6B8E23, #556B2F);
             border: none;
             color: white;
             cursor: pointer;
@@ -1105,12 +1113,104 @@
 
         .chatbot-send:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 12px rgba(107, 142, 35, 0.4);
         }
 
         .chatbot-send:disabled {
             opacity: 0.5;
             cursor: not-allowed;
+        }
+
+        /* Cities Grid Styles */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .city-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            border: 2px solid rgba(99, 102, 241, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .city-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            opacity: 0.05;
+            transition: left 0.4s ease;
+        }
+
+        .city-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .city-card:hover::before {
+            left: 0;
+        }
+
+        .city-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .city-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .city-places {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .place-tag {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .breadcrumb {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -1123,9 +1223,9 @@
                 SANCHARI
             </a>
             <ul class="navbar-menu" id="navbarMenu">
-                <li><a href="#whySanchari">Why SANCHARI</a></li>
+                <li><a href="#whySanchari">WHY</a></li>
+                <li><a href="browse.html">🔍 Browse States</a></li>
                 <li><a href="#statesSections">Destinations</a></li>
-                <li><a href="index2.html">Explore Details</a></li>
                 <li><a href="#" id="loginBtn">Login</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -1140,7 +1240,7 @@
         <header class="header" role="banner">
             <h1>✈️ SANCHARI</h1>
             <p>Discover curated tips, local food, culture & nearby attractions — fast.</p>
-            <a href="index2.html" class="explore-link">Explore More Details →</a>
+            <a href="browse.html" class="explore-link">Browse States & Cities →</a>
         </header>
 
         <section class="search-container card" role="search" aria-label="Search destinations">
@@ -1162,6 +1262,7 @@
                 <div class="suggestion-tag" onclick="selectState(this)">Uttar Pradesh</div>
                 <div class="suggestion-tag" onclick="selectState(this)">Assam</div>
                 <div class="suggestion-tag" onclick="selectState(this)">Andhra Pradesh</div>
+                <div class="suggestion-tag" onclick="showAllStates()" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); color: white; border: none;">Show All States</div>
             </div>
         </section>
 
@@ -1189,17 +1290,23 @@
                     <a href="index2.html?city=Kochi" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1562769450-e96893eb64fb?w=800&auto=format&fit=crop" alt="Kochi" title="Explore Kochi">
                     </a>
+                    <a href="index2.html?city=Guwahati" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&auto=format&fit=crop" alt="Guwahati Kamakhya Temple" title="Explore Guwahati">
+                    </a>
                     <a href="index2.html?city=Mysore" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop" alt="Mysore Palace" title="Explore Mysore">
                     </a>
                     <a href="index2.html?city=Udaipur" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1574196287634-4d17f1ba544e?w=800&auto=format&fit=crop" alt="Udaipur Lake" title="Explore Udaipur">
                     </a>
-                    <a href="index2.html?city=Gulmarg" style="display:inline-block;">
-                        <img class="rolling-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop" alt="Gulmarg Mountains" title="Explore Gulmarg">
+                    <a href="index2.html?city=Varanasi" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&auto=format&fit=crop" alt="Varanasi Ghats" title="Explore Varanasi">
                     </a>
                     <a href="index2.html?city=Agra" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop" alt="Taj Mahal Agra" title="Explore Agra">
+                    </a>
+                    <a href="index2.html?city=Majuli Island" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&auto=format&fit=crop" alt="Majuli Island" title="Explore Majuli Island">
                     </a>
                     <!-- duplicated set for smooth loop -->
                     <a href="index2.html?city=Munnar" style="display:inline-block;">
@@ -1208,19 +1315,51 @@
                     <a href="index2.html?city=Kochi" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1562769450-e96893eb64fb?w=800&auto=format&fit=crop" alt="Kochi" title="Explore Kochi">
                     </a>
+                    <a href="index2.html?city=Guwahati" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&auto=format&fit=crop" alt="Guwahati Kamakhya Temple" title="Explore Guwahati">
+                    </a>
                     <a href="index2.html?city=Mysore" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop" alt="Mysore Palace" title="Explore Mysore">
                     </a>
                     <a href="index2.html?city=Udaipur" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1574196287634-4d17f1ba544e?w=800&auto=format&fit=crop" alt="Udaipur Lake" title="Explore Udaipur">
                     </a>
-                    <a href="index2.html?city=Gulmarg" style="display:inline-block;">
-                        <img class="rolling-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop" alt="Gulmarg Mountains" title="Explore Gulmarg">
+                    <a href="index2.html?city=Varanasi" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&auto=format&fit=crop" alt="Varanasi Ghats" title="Explore Varanasi">
                     </a>
                     <a href="index2.html?city=Agra" style="display:inline-block;">
                         <img class="rolling-img" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop" alt="Taj Mahal Agra" title="Explore Agra">
                     </a>
+                    <a href="index2.html?city=Majuli Island" style="display:inline-block;">
+                        <img class="rolling-img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&auto=format&fit=crop" alt="Majuli Island" title="Explore Majuli Island">
+                    </a>
                 </div>
+            </div>
+        </section>
+
+        <!-- Cities Display Section -->
+        <section id="citiesSection" class="card" style="display: none; margin-bottom: 2rem;">
+            <div class="breadcrumb" id="breadcrumb" style="display: none;">
+                <a href="#" onclick="showStatesView()">🏠 Home</a> > 
+                <span id="breadcrumbCurrent">State</span>
+            </div>
+            
+            <h2 id="citiesTitle" style="text-align: center; margin-bottom: 1.5rem; color: var(--primary); font-family: 'Caveat Brush', cursive; font-size: 2rem;">
+                Cities in State
+            </h2>
+            
+            <div id="citiesLoading" style="display: none; text-align: center; padding: 2rem;">
+                <div style="display: inline-block; width: 40px; height: 40px; border: 3px solid var(--primary-light); border-radius: 50%; border-top-color: var(--primary); animation: spin 1s ease-in-out infinite;"></div>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">Loading cities...</p>
+            </div>
+            
+            <div id="citiesGrid" class="grid-container" style="display: none;">
+                <!-- Cities will be populated here -->
+            </div>
+            
+            <div id="citiesError" style="display: none; text-align: center; padding: 2rem; color: var(--text-secondary);">
+                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem; color: var(--secondary);"></i>
+                <p>No cities found for this state. Please try another state.</p>
             </div>
         </section>
 
@@ -1294,7 +1433,7 @@
             const userName = Cookies.get('userName');
             const loginBtn = document.getElementById('loginBtn');
             if (userName && loginBtn) {
-                loginBtn.textContent = userName;
+                loginBtn.innerHTML = `<i class='fas fa-user' style='margin-right:7px;'></i> ${userName}`;
                 loginBtn.onclick = function(e) {
                     e.preventDefault();
                     const userMenu = document.getElementById('userMenu');
@@ -1325,6 +1464,107 @@
         });
 
         let statesData = [];
+        let currentState = null;
+
+        // Function to show states view (hide cities, show states)
+        function showStatesView() {
+            document.getElementById('citiesSection').style.display = 'none';
+            document.getElementById('statesSections').style.display = 'block';
+            
+            // Clear active state
+            currentState = null;
+            
+            // Clear active suggestion tags
+            document.querySelectorAll('.suggestion-tag').forEach(tag => tag.classList.remove('active'));
+        }
+
+        // Function to load cities for a selected state
+        async function loadCitiesForState(stateId, stateName) {
+            currentState = { id: stateId, name: stateName };
+            
+            // Hide states section and show cities section
+            document.getElementById('statesSections').style.display = 'none';
+            document.getElementById('citiesSection').style.display = 'block';
+            document.getElementById('citiesTitle').textContent = `Cities in ${stateName}`;
+            document.getElementById('breadcrumb').style.display = 'block';
+            document.getElementById('breadcrumbCurrent').textContent = stateName;
+            
+            // Show loading
+            document.getElementById('citiesLoading').style.display = 'block';
+            document.getElementById('citiesGrid').style.display = 'none';
+            document.getElementById('citiesError').style.display = 'none';
+            
+            try {
+                // Fetch cities for this state using the correct endpoint
+                const response = await fetch(`/api/states/${stateId}/cities`);
+                let cities = [];
+                
+                if (response.ok) {
+                    cities = await response.json();
+                } else {
+                    console.error('Failed to fetch cities for state:', response.status, response.statusText);
+                    // Fallback: get all cities and filter by state_id
+                    const allCitiesResponse = await fetch('/api/cities');
+                    if (allCitiesResponse.ok) {
+                        const allCities = await allCitiesResponse.json();
+                        cities = allCities.filter(city => city.state_id === stateId);
+                    }
+                }
+                
+                console.log(`Loaded ${cities.length} cities for ${stateName}`);
+                
+                // Hide loading
+                document.getElementById('citiesLoading').style.display = 'none';
+                
+                if (cities.length > 0) {
+                    renderCities(cities);
+                    document.getElementById('citiesGrid').style.display = 'grid';
+                } else {
+                    document.getElementById('citiesError').style.display = 'block';
+                }
+                
+                // Scroll to cities section
+                document.getElementById('citiesSection').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+                
+            } catch (error) {
+                console.error('Error loading cities:', error);
+                document.getElementById('citiesLoading').style.display = 'none';
+                document.getElementById('citiesError').style.display = 'block';
+            }
+        }
+
+        // Function to render cities in the grid
+        function renderCities(cities) {
+            const grid = document.getElementById('citiesGrid');
+            
+            grid.innerHTML = cities.map(city => {
+                const popularPlaces = city.popular_places || [];
+                const firstThreePlaces = popularPlaces.slice(0, 3);
+                
+                return `
+                    <div class="city-card" onclick="goToCityDetails('${city.name}')">
+                        <h3>${city.name}</h3>
+                        <p>Explore this beautiful city with ${popularPlaces.length} popular attractions</p>
+                        ${firstThreePlaces.length > 0 ? `
+                            <div class="city-places">
+                                ${firstThreePlaces.map(place => `
+                                    <span class="place-tag">${place.name}</span>
+                                `).join('')}
+                                ${popularPlaces.length > 3 ? `<span class="place-tag">+${popularPlaces.length - 3} more</span>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Function to navigate to city details
+        function goToCityDetails(cityName) {
+            window.location.href = `index2.html?city=${encodeURIComponent(cityName)}`;
+        }
 
         // Fetch states data from API and render
         async function loadStates() {
@@ -1339,7 +1579,7 @@
             }
         }
 
-        // Render state sections dynamically
+        // Render state sections dynamically (hidden by default, shown on search)
         function renderStateSections(states) {
             const container = document.getElementById('statesSections');
             
@@ -1349,8 +1589,11 @@
                 'Ooty', 'Ooty (Ootacamund)', 'Mahabalipuram', 'Kodaikanal',
                 'Mysore', 'Coorg', 'Coorg (Kodagu)', 'Gokarna',
                 'Udaipur', 'Jaisalmer',
-                'Guwahati',
-                'Agra', 'Varanasi', 'Varanasi (Kashi)',
+                'Guwahati', 'Jorhat', 'Kaziranga National Park', 'Kamakhya Temple', 'Manas National Park',
+                'Haflong', 'Tezpur', 'Majuli Island', 'Sualkuchi', 'Tinsukia', 'Pabitora Wildlife Sanctuary',
+                'Digboi', 'Panimur Waterfalls', 'Dibru Saikhowa',
+                'Agra', 'Varanasi', 'Varanasi (Kasi)', 'Mathura', 'Sarnath', 'Fatehpur Sikri', 
+                'Ayodhya', 'Prayagraj', 'Dudhwa National Park', 'Agra Fort',
                 'Visakhapatnam',
                 'Srinagar', 'Gulmarg'
             ];
@@ -1364,10 +1607,10 @@
             }
             
             container.innerHTML = states.map(state => `
-                <section class="state-section" style="background-image: url('${state.image || ''}');">
+                <section class="state-section" data-state="${state.name.toLowerCase()}" style="background-image: url('${state.image || ''}'); display: none;">
                     <div class="state-content">
                         <div class="state-heading">
-                            <a href="index2.html?state=${encodeURIComponent(state.name)}" style="color: inherit; text-decoration: none;">
+                            <a href="#" onclick="loadCitiesForState('${state._id}', '${state.name}')" style="color: inherit; text-decoration: none;">
                                 ${state.name}
                             </a>
                         </div>
@@ -1397,6 +1640,15 @@
                                 </ul>
                             </div>
                         </div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button onclick="loadCitiesForState('${state._id}', '${state.name}')" 
+                                    style="background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); 
+                                           color: white; border: none; padding: 12px 24px; border-radius: 25px; 
+                                           font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+                                           box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
+                                🏙️ View All Cities in ${state.name}
+                            </button>
+                        </div>
                     </div>
                 </section>
             `).join('');
@@ -1408,29 +1660,125 @@
             // Add active class to clicked tag
             el.classList.add('active');
             
-            // Find matching state section and scroll to it
             const stateName = el.textContent.trim();
-            const sections = document.querySelectorAll('.state-section');
-            sections.forEach(sec => {
-                const heading = sec.querySelector('.state-heading a');
-                if (heading && heading.textContent.trim() === stateName) {
-                    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+            
+            // Find the state in our data
+            const state = statesData.find(s => s.name.toLowerCase() === stateName.toLowerCase());
+            
+            if (state) {
+                // Load cities for this state
+                loadCitiesForState(state._id, state.name);
+            } else {
+                // Fallback: show state sections (for states not in database)
+                showStateSections(stateName);
+            }
+        }
+
+        // Fallback function to show static state sections
+        function showStateSections(stateName) {
+            // Hide cities section
+            document.getElementById('citiesSection').style.display = 'none';
+            document.getElementById('statesSections').style.display = 'block';
+            
+            // Hide all state sections first
+            document.querySelectorAll('.state-section').forEach(section => {
+                section.style.display = 'none';
             });
+            
+            // Show matching state section and scroll to it
+            const matchingSection = document.querySelector(`.state-section[data-state="${stateName.toLowerCase()}"]`);
+            if (matchingSection) {
+                matchingSection.style.display = 'block';
+                matchingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
         // Search functionality
         document.getElementById('searchForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const query = document.getElementById('destinationInput').value.trim();
+            const query = document.getElementById('destinationInput').value.trim().toLowerCase();
             if (query) {
+                // Clear active tags
+                document.querySelectorAll('.suggestion-tag').forEach(tag => tag.classList.remove('active'));
+                
+                // First, try to find exact state match in our database
+                const exactStateMatch = statesData.find(state => 
+                    state.name.toLowerCase().includes(query)
+                );
+                
+                if (exactStateMatch) {
+                    // Load cities for the matched state
+                    loadCitiesForState(exactStateMatch._id, exactStateMatch.name);
+                    return;
+                }
+                
+                // Check if matches suggestion tag
                 const matchingTag = Array.from(document.querySelectorAll('.suggestion-tag'))
-                    .find(tag => tag.textContent.toLowerCase().includes(query.toLowerCase()));
+                    .find(tag => tag.textContent.toLowerCase().includes(query));
+                
                 if (matchingTag) {
+                    matchingTag.classList.add('active');
                     selectState(matchingTag);
+                    return;
+                }
+                
+                // If no exact match, search through places in states
+                // Hide cities section and show state sections for broader search
+                document.getElementById('citiesSection').style.display = 'none';
+                document.getElementById('statesSections').style.display = 'block';
+                
+                // Hide all state sections first
+                document.querySelectorAll('.state-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Find matching states
+                let foundMatch = false;
+                statesData.forEach(state => {
+                    if (state.name.toLowerCase().includes(query) || 
+                        (state.popularPlaces && state.popularPlaces.some(place => place.toLowerCase().includes(query))) ||
+                        (state.hiddenPlaces && state.hiddenPlaces.some(place => place.toLowerCase().includes(query)))) {
+                        
+                        const section = document.querySelector(`.state-section[data-state="${state.name.toLowerCase()}"]`);
+                        if (section) {
+                            section.style.display = 'block';
+                            foundMatch = true;
+                        }
+                    }
+                });
+                
+                if (foundMatch) {
+                    // Scroll to first visible section
+                    const firstVisible = document.querySelector('.state-section[style*="block"]');
+                    if (firstVisible) {
+                        firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } else {
+                    // No matches found
+                    alert(`No results found for "${query}". Try searching for a specific state name like "Kerala", "Rajasthan", etc.`);
                 }
             }
         });
+
+        function showAllStates() {
+            // Clear active tags
+            document.querySelectorAll('.suggestion-tag').forEach(tag => tag.classList.remove('active'));
+            
+            // Hide cities section and show states sections
+            document.getElementById('citiesSection').style.display = 'none';
+            document.getElementById('statesSections').style.display = 'block';
+            
+            // Show all state sections
+            document.querySelectorAll('.state-section').forEach(section => {
+                section.style.display = 'block';
+            });
+            
+            // Scroll to states sections
+            const firstSection = document.querySelector('.state-section');
+            if (firstSection) {
+                firstSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
 
 
         document.getElementById('searchBtn').addEventListener('click', function() {
