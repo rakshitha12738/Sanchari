@@ -1126,6 +1126,7 @@
                 <li><a href="#whySanchari">Why SANCHARI</a></li>
                 <li><a href="#statesSections">Destinations</a></li>
                 <li><a href="index2.html">Explore Details</a></li>
+                <li><a href="#" id="loginBtn">Login</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                 <span></span>
@@ -1145,6 +1146,9 @@
         <section class="search-container card" role="search" aria-label="Search destinations">
             <form id="searchForm" class="search-form">
                 <input id="destinationInput" class="search-input" placeholder="Enter destination... (e.g. Kerala)" autocomplete="off" />
+                <button id="micBtn" type="button" title="Speak" style="background: none; border: none; outline: none; cursor: pointer; margin-right: 8px; font-size: 1.3rem; color: var(--primary); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-microphone"></i>
+                </button>
                 <button id="searchBtn" class="search-btn" type="button">
                     <i class="fas fa-search"></i>&nbsp; Search
                 </button>
@@ -1232,7 +1236,7 @@
         
         <div class="chatbot-window" id="chatbotWindow">
             <div class="chatbot-header">
-                <h3>🌍 SANCHARI Travel Assistant</h3>
+                <h3>💬 SANCHARI AI Assistant</h3>
                 <button class="chatbot-close" id="chatbotClose">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1240,7 +1244,7 @@
             
             <div class="chatbot-messages" id="chatbotMessages">
                 <div class="message bot">
-                    <p>Hello! 👋 I'm your SANCHARI travel assistant. Ask me anything about Indian travel destinations, local food, culture, or tips!</p>
+                    <p>Hello! 👋 I'm your SANCHARI AI assistant. I can help you with travel planning, destination info, local cuisine, cultural insights, and answer general questions. What would you like to know?</p>
                 </div>
             </div>
             
@@ -1249,7 +1253,7 @@
                     type="text" 
                     class="chatbot-input" 
                     id="chatbotInput" 
-                    placeholder="Ask about travel destinations..."
+                    placeholder="Ask me anything..."
                     autocomplete="off"
                 />
                 <button class="chatbot-send" id="chatbotSend">
@@ -1259,7 +1263,67 @@
         </div>
     </div>
 
+    <!-- User Menu -->
+    <div id="userMenu" style="display: none; position: fixed; right: 20px; top: 70px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;">
+        <div style="padding: 15px; border-bottom: 1px solid #eee;">
+            <strong id="userDisplayName"></strong>
+        </div>
+        <div style="padding: 15px;">
+            <a href="#" onclick="handleLogout()" style="color: var(--primary); text-decoration: none;">Logout</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <script>
+        // Check authentication on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const token = Cookies.get('token');
+            if (!token) {
+                // User is not logged in, redirect to login page
+                window.location.href = 'login.html';
+                return;
+            }
+            // User is logged in, show user name in navbar
+            updateNavbarUser();
+            
+            // Load states data
+            loadStates();
+        });
+
+        function updateNavbarUser() {
+            const userName = Cookies.get('userName');
+            const loginBtn = document.getElementById('loginBtn');
+            if (userName && loginBtn) {
+                loginBtn.textContent = userName;
+                loginBtn.onclick = function(e) {
+                    e.preventDefault();
+                    const userMenu = document.getElementById('userMenu');
+                    userMenu.style.display = userMenu.style.display === 'none' ? 'block' : 'none';
+                };
+                
+                const userDisplayName = document.getElementById('userDisplayName');
+                if (userDisplayName) {
+                    userDisplayName.textContent = userName;
+                }
+            }
+        }
+
+        function handleLogout() {
+            Cookies.remove('token');
+            Cookies.remove('userName');
+            Cookies.remove('userEmail');
+            window.location.href = 'login.html';
+        }
+
+        // Close user menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById('userMenu');
+            const loginBtn = document.getElementById('loginBtn');
+            if (userMenu && loginBtn && !userMenu.contains(event.target) && event.target !== loginBtn) {
+                userMenu.style.display = 'none';
+            }
+        });
+
         let statesData = [];
 
         // Fetch states data from API and render
@@ -1368,20 +1432,61 @@
             }
         });
 
+
         document.getElementById('searchBtn').addEventListener('click', function() {
             document.getElementById('searchForm').dispatchEvent(new Event('submit'));
         });
+
+        // Voice to Text for Search Bar
+        const micBtn = document.getElementById('micBtn');
+        const destinationInput = document.getElementById('destinationInput');
+        let recognition;
+        let recognizing = false;
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.lang = 'en-IN';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = function() {
+                recognizing = true;
+                micBtn.style.color = 'var(--accent)';
+                micBtn.querySelector('i').classList.add('fa-beat-fade');
+            };
+            recognition.onend = function() {
+                recognizing = false;
+                micBtn.style.color = 'var(--primary)';
+                micBtn.querySelector('i').classList.remove('fa-beat-fade');
+            };
+            recognition.onerror = function(event) {
+                recognizing = false;
+                micBtn.style.color = 'var(--primary)';
+                micBtn.querySelector('i').classList.remove('fa-beat-fade');
+            };
+            recognition.onresult = function(event) {
+                if (event.results && event.results[0] && event.results[0][0]) {
+                    destinationInput.value = event.results[0][0].transcript;
+                    document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+                }
+            };
+
+            micBtn.addEventListener('click', function() {
+                if (recognizing) {
+                    recognition.stop();
+                } else {
+                    recognition.start();
+                }
+            });
+        } else {
+            micBtn.style.display = 'none';
+        }
 
         document.getElementById('destinationInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 document.getElementById('searchForm').dispatchEvent(new Event('submit'));
             }
-        });
-
-        // Initialize
-        window.addEventListener('DOMContentLoaded', () => {
-            loadStates();
         });
 
         // Chatbot functionality

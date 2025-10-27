@@ -90,6 +90,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(appRoot));
 
+// Import and use authentication routes
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
+
 // Handle favicon.ico request
 app.get('/favicon.ico', (req, res) => {
   res.status(204).send(); // No content
@@ -191,9 +195,19 @@ app.post('/api/chat', async (req, res) => {
       throw new Error('GEMINI_API_KEY not found in environment variables');
     }
     // Use the stable Gemini 2.5 model with v1 API
-    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;    const prompt = `You are a helpful travel assistant for SANCHARI, an Indian travel guide platform. 
-Answer questions about Indian travel destinations, local food, culture, weather, and tips.
-Keep responses concise (2-3 sentences), friendly, and informative.
+    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+    
+    const prompt = `You are a knowledgeable and friendly AI assistant for SANCHARI. 
+You can answer questions about:
+- Travel destinations, attractions, and activities (especially India)
+- Local food, cuisine, and restaurants
+- Culture, traditions, and customs
+- Weather, best time to visit, and travel tips
+- General knowledge and helpful information
+- Safety, accommodation, and transportation
+
+Provide helpful, accurate, and conversational responses. Keep answers concise but informative (2-4 sentences).
+If you're not sure about something, be honest and suggest where they might find more information.
 
 User question: ${message}`;
 
