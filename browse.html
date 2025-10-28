@@ -448,14 +448,14 @@
       
       // Define images for each state
       const stateImages = {
-        'Andhra Pradesh': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
-        'Jammu and Kashmir': 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop',
-        'Uttar Pradesh': 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop',
-        'Rajasthan': 'https://images.unsplash.com/photo-1574196287634-4d17f1ba544e?w=800&auto=format&fit=crop',
-        'Kerala': 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop',
-        'Assam': 'https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&auto=format&fit=crop',
-        'Tamil Nadu': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
-        'Karnataka': 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop'
+  'Andhra Pradesh': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+  'Jammu and Kashmir': 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop',
+  'Uttar Pradesh': 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop',
+  'Rajasthan': 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop',
+  'Kerala': 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop',
+  'Assam': 'https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&auto=format&fit=crop',
+  'Tamil Nadu': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+  'Karnataka': 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop'
       };
       
       grid.innerHTML = states.map(state => {
@@ -543,14 +543,43 @@
         return;
       }
       
+      // City images for all states (add more as needed)
+      const cityImages = {
+        // Andhra Pradesh
+        'Visakhapatnam': 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800&auto=format&fit=crop',
+        'Tirupati': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Araku Valley': 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&auto=format&fit=crop',
+        'Yaganti': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Srisailam': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Gandikota': 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&auto=format&fit=crop',
+        'Hamsaladeevi': 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop',
+        'Belum Caves': 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop',
+        'Coringa': 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=800&auto=format&fit=crop',
+        'Ahobilam': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Amaravati': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Lepakshi': 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop',
+        'Lambasingi': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop',
+        // Jammu & Kashmir
+        'Srinagar': 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop',
+        'Gulmarg': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop',
+        'Pahalgam': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop',
+        'Sonamarg': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop',
+        'Leh': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop',
+        'Kargil': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop',
+        'Pulwama': 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop',
+        'Baramulla': 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop',
+        'Kupwara': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop',
+        'Anantnag': 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop'
+      };
+
       grid.innerHTML = cities.map(city => {
         const placesCount = city.popular_places ? city.popular_places.length : 0;
         const hasData = placesCount > 0;
-        
+        const imageUrl = cityImages[city.name] || 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop';
         return `
           <div class="card" onclick="viewCityDetails('${city.name}')">
-            <div class="card-image" style="background: linear-gradient(45deg, var(--secondary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-              🏙️
+            <div class="card-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+              <span style="background: rgba(0,0,0,0.2); border-radius: 50%; padding: 0.3em 0.5em;">🏙️</span>
             </div>
             <div class="card-content">
               <div class="card-title">${city.name}</div>

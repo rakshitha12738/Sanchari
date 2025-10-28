@@ -4595,6 +4595,16 @@ city_hogenakkal_falls = {
 #db.cities.insert_many([city_vizag, city_tirupati, city_araku,city_yaganti,city_srisailam, city_gandikota, city_hamsaladeevi, city_belum_caves, city_coringa,city_ahobilam,city_dhanushkodi, city_amaravati, city_ooty,city_mahabalipuram,city_rameshwaram,city_hogenakkal_falls,city_lepakshi,city_lambasingi,city_brihadeeswarar_temple,city_kodaikanal,city_srirangam,city_meenakshi_temple,city_kanyakumari,city_marina_beach,city_coonoor,city_pichavaram,city_kolli_hills,city_chettinad,city_gulmarg,city_srinagar,city_pahalgam,city_sonamarg,city_mughal_garden,city_jama_masjid,city_katra,city_patnitop,city_yusmarg,city_gurez_valley,city_doodhpatri,city_sinthan_top,city_,city_padmanabhaswamy_temple,city_kumarakom_bird_sanctuary,city_sabarimala,city_periyar, city_alleppey,city_kovalam,city_kozhikode,city_munnar,city_silent_valley,city_athirappilly,city_kolukkumalai,city_marayoor,city_gavi,city_kasi, city_taj_mahal, city_mathura, city_sarnath, city_fatehpur_sikri, city_ayodhya , city_prayagraj#, city_dudhwa_national_park, city_agra_fort, city_lucknow, city_chitrakoot, city_chunar_fort, city_ramnagar, city_rani_mahal, city_katarniaghat,city_narlai, city_khuri_dunes, city_mandawa, city_wayanad,city_osian, city_khimsar, city_chittorgarh_fort , city_mount_abu, city_ajmer_dargah, city_junagarh_fort, city_pushkar, city_ranthambore_national_park, city_jaisalmer_fort,city_kochi city_mehrangarh_fort, city_udaipur_city_palace, city_hawa_mahal, city_chamundi_hills, city_kudremukh, city_apsara_konda, city_st_marys_islands,city_wular_lake,city_agumbe, city_srirangapatna, city_chikmagalur, city_nandi_hills, city_kabini_wildlife, city_belur, city_badami, city_coorg, city_gokarna, city_mysore_palace,  city_hampi, city_kamakhya_temple,city_manas,city_haflong,city_guwahati,city_jorhat,city_kaziranga,city_tezpur, city_majuli, city_sualkuchi,city_tinsukia, city_pabitora,city_digboi, city_panimur, city_dibru_saikhowa,city_sivasagar])
 #print("Database created and all city information inserted.")
 
+# Some cities use the key 'hidden_gem_places' while the frontend expects
+# 'popular_places'. To avoid editing every city dict manually, copy
+# 'hidden_gem_places' -> 'popular_places' for all city_* dicts that need it.
+for name, obj in list(globals().items()):
+    if not name.startswith('city_'):
+        continue
+    if isinstance(obj, dict):
+        if 'hidden_gem_places' in obj and 'popular_places' not in obj:
+            obj['popular_places'] = obj['hidden_gem_places']
+
 db.cities.insert_many([
     city_vizag, city_tirupati, city_araku, city_yaganti, city_srisailam, city_gandikota, city_hamsaladeevi,
     city_belum_caves, city_coringa, city_ahobilam, city_amaravati, city_ooty, city_mahabalipuram,
