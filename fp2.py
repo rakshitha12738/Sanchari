@@ -929,18 +929,18 @@ city_lucknow = {
             "name": "Lucknow",
             "history": {
                 "text": "Lucknow, the capital of Uttar Pradesh, is famed for Awadhi culture, arts, cuisine, and its role as the Nawabi capital after the fall of the Mughal Empire. Known for its Mughal-Persian-British heritage, the city’s icons include Bara Imambara, Rumi Darwaza, and the British Residency, synonymous with 1857 rebellion history.",
-                "image": "https://yourbucket.com/lucknow-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.oyorooms.com%2Ftravel-guide%2Fhistorical-places-in-lucknow%2F&psig=AOvVaw0JkoJAPG_GgayhU0Nq0ogQ&ust=1761673609715000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDQ5uD3xJADFQAAAAAdAAAAABAE"
             },
             "localCuisine": [
                 {
                     "name": "Awadhi biryani, Galouti/Tunday/Kakori kebabs, Nihari, basket chaat, samosa, chole bhature, kulfi, malai-makkhan, sweets from Chowk/Aminabad.",
-                    "image": "https://yourbucket.com/galouti-kebab.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zomato.com%2Flucknow%2Fkebab&psig=AOvVaw1u8k1T65hgmHqj84NCNaTo&ust=1761673657839000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOD04_73xJADFQAAAAAdAAAAABAM"
                 }
             ],
             "activities": [
                 {
                     "name": "Heritage walks to Bara Imambara (Bhul Bhulaiya labyrinth), Chhota Imambara, Rumi Darwaza, British Residency, Hussainabad Clock Tower, shop for Chikankari, attend Kathak/music events, visit Kaiserbagh Palace, Safed Baradari, Sikandar Bagh gardens.",
-                    "image": "https://yourbucket.com/bara-imambara.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftimesofindia.indiatimes.com%2Ftravel%2Fdestinations%2Fmind-blowing-facts-about-lucknow%2Fphotostory%2F89182784.cms&psig=AOvVaw0sFKU2r-V0tfgiDzIbFQdy&ust=1761673737411000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLD23p34xJADFQAAAAAdAAAAABAE"
                 }
             ],
             "safetyTips": [
@@ -953,7 +953,7 @@ city_lucknow = {
             "nearbyAttractions": [
                 {
                     "name": "Dewa Sharif (Sufi shrine, Barabanki), Nawabganj Bird Sanctuary, Bithoor (pilgrimage town), Kakori Memorial, Kanpur (industrial/cultural city).",
-                    "image": "https://yourbucket.com/rumi-darwaza.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.incredibleindia.gov.in%2Fen%2Futtar-pradesh%2Flucknow%2Frumi-darwaza&psig=AOvVaw3cmIEAvBRUqK6n554udQOu&ust=1761673768436000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNCqmbL4xJADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -968,18 +968,18 @@ city_chitrakoot = {
             "name": "Chitrakoot",
             "history": {
                 "text": "Chitrakoot, on the UP-MP border, is renowned as the Ramayana site where Lord Rama, Sita, and Lakshmana spent their exile. Ancient and sacred, its sites (Kamadgiri Hill, Ramghat, Janki Kund) attract pilgrims and were celebrated by Bundelas and Marathas, remaining central in India’s spiritual poetry/geography.",
-                "image": "https://yourbucket.com/chitrakoot-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.soil2soulexpeditions.com%2Fmystical-sites%2FHistorical-significance-and-mythological-importance-of-Chitrakoot&psig=AOvVaw2Ue48NxeUwKZRolv3WqmEQ&ust=1761673822338000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKCYksb4xJADFQAAAAAdAAAAABAL"
             },
             "localCuisine": [
                 {
                     "name": "Sattvic thali (chapati, rice, dal, sabzi, halwa), malpua, khoya ladoos, besan halwa, ram dana laddoos, street snacks (kachori sabzi, poha, jalebi, samosa, sabudana khichdi, fruit chaat), litti chokha, til laddoos, makhana fry, boondi, gur sweets.",
-                    "image": "https://yourbucket.com/chitrakoot-thali.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zomato.com%2Fjaipur%2Fchitrakoot-order-online%3Fdelivery_subzone%3D2363%26min-order%3D3&psig=AOvVaw0dQSXZVwgAYme5TsQ93pjc&ust=1761673864496000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDMkd74xJADFQAAAAAdAAAAABAV"
                 }
             ],
             "activities": [
                 {
                     "name": "Ritual dips at Ramghat, Kamadgiri Hill parikrama, explore Janki Kund, Sphatik Shila, Hanuman Dhara, Satna forest trails, visit ashrams, enjoy festival music, street food, local markets, and Chitrakoot Mela.",
-                    "image": "https://yourbucket.com/kamadgiri-hill.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftripcosmos.co%2Fkamadgiri-parikrama%2F%3Fsrsltid%3DAfmBOoqcEP7oSqbdZfX5tN8A7qCqhfVVKiGplIYGu9l9x0gphNO5c06s&psig=AOvVaw3voW9wXXyu07eLEGpvqJSm&ust=1761673952202000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLDQ_Yb5xJADFQAAAAAdAAAAABAe"
                 }
             ],
             "safetyTips": [
@@ -992,7 +992,7 @@ city_chitrakoot = {
             "nearbyAttractions": [
                 {
                     "name": "Kamadgiri Hill (parikrama, shrines), Janki Kund (Sita’s bathing spot), Sphatik Shila (legendary boulder), Hanuman Dhara (waterfall/shrine), Gupt Godavari Caves (underground river), Bharatkoop (sacred well).",
-                    "image": "https://yourbucket.com/gupt-godavari-caves.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mptourism.com%2Fgupt-godavari-mysterious-caves-and-secret-river-chitrakoot.html&psig=AOvVaw09qHKk2ly7GZ-ScbcEu3x8&ust=1761674005394000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDfjKP5xJADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -1007,18 +1007,18 @@ city_chunar_fort = {
             "name": "Chunar Fort",
             "history": {
                 "text": "Chunar Fort sits above the Ganges in Mirzapur district and dates back to at least the 1st century BCE. Fortified and named variously, it changed hands from King Sahadeo to Mughal and British rulers. It served as depot, prison, and residence, protected today as a culture site celebrated in literature and folklore.",
-                "image": "https://yourbucket.com/chunar-fort-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftimesofindia.indiatimes.com%2Ftravel%2Fvaranasi%2Fchunar-fort%2Fps35112884.cms&psig=AOvVaw304f4FTCZRH1ymlDF2FehE&ust=1761675922503000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwiJq-qtgMWQAxXEcWwGHeCoO9AQjRx6BAgAEBo"
             },
             "localCuisine": [
                 {
                     "name": "Samosas, pakoras, North Indian thalis (chapati, dal, sabzi, sweets), malaiyo, milk sweets, tea, and snacks near river/fort entrance.",
-                    "image": "https://yourbucket.com/malaiyo.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AMalaiyo_Pehalwaan_lassi_in_front_of_ravidas_gate_LANKA._Varanasi_Uttar_Pradesh.jpg&psig=AOvVaw0rg2nEJJCbBsZHVx0DcEu5&ust=1761675989069000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwi2ncnNgMWQAxUPQGwGHbT0G5IQjRx6BAgAEBo"
                 }
             ],
             "activities": [
                 {
                     "name": "Explore ramparts, gates (Iftikhar Khan), Sonwa Mandap, ancient wells/stepwells, Aurangzeb’s mosque; fort photography, legends, walk old Mirzapur markets for crafts.",
-                    "image": "https://yourbucket.com/sonwa-mandap.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmapcarta.com%2FW467949634&psig=AOvVaw1x9bPLmBtGR7iUl4sfUciR&ust=1761676028458000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwjlq63ggMWQAxWGUGwGHSweI-AQjRx6BAgAEBo"
                 }
             ],
             "safetyTips": [
@@ -1031,7 +1031,7 @@ city_chunar_fort = {
             "nearbyAttractions": [
                 {
                     "name": "Vindhyachal (pilgrimage town/temple, 25 km), Varanasi (spiritual city, 40 km downstream), Sonwa Mandap & Bhairo Burj (fort highlights), Kali Khoh/caves (legendary sites), Mirzapur (ghats, carpets, lakes).",
-                    "image": "https://yourbucket.com/mirzapur-ghat.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fp%2FC1DgeGsSGC5%2F&psig=AOvVaw02-WqKiI5ZmA7OWOgwMaUH&ust=1761676070542000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwit-bX0gMWQAxXibWwGHXx4KI8QjRx6BAgAEBo"
                 }
             ]
         }
@@ -1151,7 +1151,7 @@ city_katarniaghat = {
             "nearbyAttractions": [
                 {
                     "name": "Dudhwa National Park, Kishanpur Wildlife Sanctuary (bird/mammal wetlands), Frog Temple (Oel), Indo-Nepal border villages (birding/culture), Suheli Barrage (riverscape/birdwatching).",
-                    "image": "https://yourbucket.com/frog-temple.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmywander337630583.wordpress.com%2F2022%2F05%2F15%2Fthe-frog-temple%2F&psig=AOvVaw0xXyMHlQZcG_UOK3mJrgaM&ust=1761674692620000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMi_uev7xJADFQAAAAAdAAAAABAL"
                 }
             ]
         }
@@ -1166,18 +1166,18 @@ city_hawa_mahal = {
             "name": "Hawa Mahal",
             "history": {
                 "text": "Hawa Mahal ('Palace of Winds') was built in 1799 by Maharaja Sawai Pratap Singh as part of Jaipur’s City Palace. Designed by Lal Chand Ustad, its five stories—953 lattice windows—let royal women observe life below under purdah. The pink sandstone masterpiece reflects Rajput-Mughal, Jaipur Pink City legacy, and careful restoration up to the present.",
-                "image": "https://yourbucket.com/hawa-mahal-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.britannica.com%2Fplace%2FHawa-Mahal&psig=AOvVaw3Oq3HlrgnoeTqDP6WBjWKe&ust=1761674788671000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIiS5ZL8xJADFQAAAAAdAAAAABAE"
             },
             "localCuisine": [
                 {
                     "name": "Rajasthani thali (dal baati churma, gatte ki sabzi, ker sangri), rooftop sweets (ghevar, mawa kachori, rabri), snacks/chaat (Johari Bazaar), masala chai, samosas in historic cafes.",
-                    "image": "https://yourbucket.com/ghevar.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Faayanshkitchen.com%2Fghevar-sweet-malai-ghewar%2F&psig=AOvVaw1VJonTGilAdN9EnG5U1VDX&ust=1761674846629000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIDMvrD8xJADFQAAAAAdAAAAABAE"
                 }
             ],
             "activities": [
                 {
                     "name": "Tour the palace’s 953 jharokhas/lattices and balconies, photograph at sunrise/sunset for Pink City views, museum visit, shop handicrafts/jewelry/textiles at Johari Bazaar, climb to upper floors for views of Jantar Mantar, City Palace, Jaipur.",
-                    "image": "https://yourbucket.com/hawa-mahal-jharokha.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Feastindiantraveller.com%2F2020%2F10%2F26%2Fhawa-mahal%2F&psig=AOvVaw3zpwylJ9riyZ2emQcOXtku&ust=1761674884470000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPiK7b_8xJADFQAAAAAdAAAAABAE"
                 }
             ],
             "safetyTips": [
@@ -1190,7 +1190,7 @@ city_hawa_mahal = {
             "nearbyAttractions": [
                 {
                     "name": "City Palace (Mughal-Rajput museums), Jantar Mantar (UNESCO observatory), Johari Bazaar (jewels, food), Albert Hall Museum (Indo-Saracenic art), Nahargarh Fort (city/sunset views).",
-                    "image": "https://yourbucket.com/city-palace.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.incredibleindia.gov.in%2Fen%2Frajasthan%2Fudaipur%2Fcity-palace&psig=AOvVaw3f2QCuc1EOoLmSQ9jW2v-b&ust=1761674913010000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKDDns38xJADFQAAAAAdAAAAABAL"
                 }
             ]
         }
@@ -1205,18 +1205,18 @@ city_udaipur_city_palace = {
             "name": "Udaipur City Palace",
             "history": {
                 "text": "Udaipur City Palace, Rajasthan’s largest, was begun by Maharana Udai Singh II in 1559 and expanded for 400 years by his Sisodia Rajput successors. It merges Rajput, Mughal, European, and Chinese styles on Lake Pichola’s bank, housing private palaces, courtyards (Mor Chowk), royal museums, and a tradition of Mewar cultural patronage.",
-                "image": "https://yourbucket.com/udaipur-palace-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.britannica.com%2Ftopic%2FUdaipur-City-Palace&psig=AOvVaw1e4U3xIe9NZth-NcQYDYk7&ust=1761675180353000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLjZiM79xJADFQAAAAAdAAAAABAE"
             },
             "localCuisine": [
                 {
                     "name": "Rajasthani thali (dal baati churma, gatte ki sabzi, ker sangri, spicy curries), sweets (ghevar, rabri, mawa kachori), masala chai, samosas, street snacks/chaat near City Palace/Jagdish Chowk.",
-                    "image": "https://yourbucket.com/udaipur-ghevar.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.justdial.com%2Fjdmart%2FUdaipur-Rajasthan%2FGhevar-Sweet%2Fjdm-1350377-ent-6-22507474&psig=AOvVaw3OfzK-_sQjiBJwfib8HViD&ust=1761675224976000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiizuP9xJADFQAAAAAdAAAAABAE"
                 }
             ],
             "activities": [
                 {
                     "name": "Tour Sheesh Mahal, Mor Chowk, Zenana Mahal, art galleries, photograph lake panoramas, Badi Mahal gardens, visit Palace Museum (armory, textiles, royal artifacts), attend cultural shows/weddings, shop palace bazaars.",
-                    "image": "https://yourbucket.com/city-palace-balcony.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fudaipur-city-palace-balcony.html&psig=AOvVaw317H2jXMczx4Igefdp1txM&ust=1761675262626000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCdgvX9xJADFQAAAAAdAAAAABAK"
                 }
             ],
             "safetyTips": [
@@ -1229,7 +1229,7 @@ city_udaipur_city_palace = {
             "nearbyAttractions": [
                 {
                     "name": "Lake Pichola (boat rides, Jag Mandir, Lake Palace), Jagdish Temple, Bagore Ki Haveli (museum, Gangaur Ghat), Saheliyon-ki-Bari (lotus gardens/pavilions), Sajjangarh (Monsoon Palace, for sunset views).",
-                    "image": "https://yourbucket.com/lake-pichola.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FLake_Pichola&psig=AOvVaw2e5JaXWO_m_xAZg9FWEQVu&ust=1761675296254000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLjpq4b-xJADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -1244,18 +1244,18 @@ city_mehrangarh_fort = {
             "name": "Mehrangarh Fort",
             "history": {
                 "text": "Mehrangarh Fort, founded by Rao Jodha in 1459, dominates Jodhpur from a 400-foot hilltop. Over 500 years, it was expanded by Rathore rulers as a mighty fortress, palace center, and spiritual site. Legends (Cheeria Nathji's curse) and folk celebrations are part of its storied history.",
-                "image": "https://yourbucket.com/mehrangarh-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.britannica.com%2Fplace%2FMehrangarh-Fort&psig=AOvVaw2v9S0rNXvpr3TM0XhXXs7Y&ust=1761675335591000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCZx5b-xJADFQAAAAAdAAAAABAE"
             },
             "localCuisine": [
                 {
                     "name": "Rajasthani thali (dal baati churma, gatte ki sabzi, ker sangri, spicy curries), sweets (ghevar, mawa kachori, rabri), samosa, mirchi vada, masala chai, makhaniya lassi.",
-                    "image": "https://yourbucket.com/mehrangarh-thali.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fthings2.do%2Fblogs%2Ftop-5-authentic-rajasthani-thali-restaurants-in-jaipur%2F&psig=AOvVaw2pFEFOq1DPhKX74XZZQpLc&ust=1761675381946000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLCd5q7-xJADFQAAAAAdAAAAABAL"
                 }
             ],
             "activities": [
                 {
                     "name": "Tour palaces (Moti Mahal, Phool Mahal, Sheesh Mahal), walk through 7 gates (Jai Pol, Fateh Pol, Loha Pol with sati handprints), view Dedh Kangra Pol, fort ramparts (Jodhpur panorama), Chamunda Mataji Temple, Mehrangarh Museum, enjoy Rajasthan Folk and Sacred Spirit Festivals.",
-                    "image": "https://yourbucket.com/mehrangarh-rampart.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.in%2FAttraction_Review-g297668-d320061-Reviews-Mehrangarh_Fort-Jodhpur_Jodhpur_District_Rajasthan.html&psig=AOvVaw3Q9W5zy4VvWe8aQTiS0DEh&ust=1761675423454000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOiTrMX-xJADFQAAAAAdAAAAABAE"
                 }
             ],
             "safetyTips": [
@@ -1268,7 +1268,7 @@ city_mehrangarh_fort = {
             "nearbyAttractions": [
                 {
                     "name": "Jaswant Thada (marble memorial), Umaid Bhawan Palace (museum/hotel), Mandore Gardens (old capital temples/cenotaphs), Ghanta Ghar & Sardar Market (Jodhpur bazaar), Rao Jodha Desert Rock Park (native flora park).",
-                    "image": "https://yourbucket.com/jaswant-thada.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.incredibleindia.gov.in%2Fen%2Frajasthan%2Fjodhpur%2Fjaswant-thada&psig=AOvVaw0ZlYZKT-CXO6Iy4AaLpbY2&ust=1761675469995000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDV7db-xJADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -1284,18 +1284,18 @@ city_jaisalmer_fort = {
             "name": "Jaisalmer Fort (Sonar Quila)",
             "history": {
                 "text": "Jaisalmer Fort, or Sonar Quila, was built in 1156 AD by Rawal Jaisal on Trikuta Hill. One of the few living forts with a resident population, it played a strategic Silk Route role and reflects Rajput, Mughal, and desert heritage through its radiant stone, ramparts, and palaces. Today a UNESCO site, it's famed for vibrant traditions.",
-                "image": "https://yourbucket.com/jaisalmer-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.kiomoi.com%2Ftravel-articles%2Fjaisalmer-fort%3A-a-majestic-wonder-of-rajasthan-155&psig=AOvVaw1NbKSn6I6mpIv8B9j3UpDn&ust=1761675495881000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLi7xOT-xJADFQAAAAAdAAAAABAE"
             },
             "localCuisine": [
                 {
                     "name": "Rajasthani thali (dal baati churma, gatte ki sabzi, ker sangri), sweets (ghevar, mawa kachori, rabri), samosa, mirchi vada, Jaisalmer bhujia, masala chai, pyaz ki kachori.",
-                    "image": "https://yourbucket.com/jaisalmer-thali.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.in%2FLocationPhotoDirectLink-g297667-d1195393-i435508928-Natraj_Restaurant-Jaisalmer_Jaisalmer_District_Rajasthan.html&psig=AOvVaw3dvc_uVhBHFHAoAI0LKjR9&ust=1761675526773000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJjt_PL-xJADFQAAAAAdAAAAABAE"
                 }
             ],
             "activities": [
                 {
                     "name": "Tour ramparts and gates (Akhai Pol, Ganesh Pol, Suraj Pol, Hawa Pol), explore Raj Mahal, Jain temples, merchant havelis, shop for crafts in fort alleys, puppet shows, folk festivals, sunset from ramparts.",
-                    "image": "https://yourbucket.com/sonar-quila-rampart.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.weseektravel.com%2Fjaisalmer-fort-in-rajasthan%2F&psig=AOvVaw10pn4GqQ3B6r8Px6nrRkyu&ust=1761675561578000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLD-lIT_xJADFQAAAAAdAAAAABAE"
                 }
             ],
             "safetyTips": [
@@ -1308,7 +1308,7 @@ city_jaisalmer_fort = {
             "nearbyAttractions": [
                 {
                     "name": "Patwon ki Haveli, Salim Singh ki Haveli, Nathmal ki Haveli, Gadisar Lake, Bada Bagh, Desert National Park, Kuldhara ghost village.",
-                    "image": "https://yourbucket.com/gadisar-lake.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ffortrajwada.com%2Fblogs%2Fgadisar-lake-in-jaisalmer%2F&psig=AOvVaw0evlq2V5qnCoqXkgx61wJn&ust=1761675589715000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNCPyZD_xJADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -2985,18 +2985,18 @@ city_padmanabhaswamy_temple = {
             "name": "Padmanabhaswamy Temple",
             "history": {
                 "text": "Padmanabhaswamy Temple in Thiruvananthapuram, Kerala, dedicated to Lord Vishnu, is among India’s most ancient shrines. References date to at least the 8th–9th centuries. It rose to prominence under Travancore kings, especially Marthanda Varma (18th century), who surrendered his kingdom to the deity, ruling as Padmanabha Dasa. The 18-foot Vishnu idol in 'Anantha Shayana' posture was rebuilt with 12,008 sacred stones in 1739. The temple and its vast hidden vaults are legendary for immense wealth and treasure.",
-                "image": "https://yourbucket.com/padmanabhaswamy-history.jpg"
+                "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftamil.news18.com%2Fnews%2Flifestyle%2Ftravel-untold-mystery-behind-kerala-padmanabha-swamy-temple-ghta-tmn-747118.html&psig=AOvVaw3jeG7M53GTcrWMSPH3G8mN&ust=1761680323967000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCcseSQxZADFQAAAAAdAAAAABAE"
             },
             "localCuisine": [
                 {
                     "name": "Kerala sadya (vegetarian banana leaf feast), temple prasad (sweet payasam), appam/stew, puttu/kadala curry, idiyappam, banana chips, pazham pori, spicy snacks, filter coffee, coconut water from temple shops.",
-                    "image": "https://yourbucket.com/kerala-sadya.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FSadya&psig=AOvVaw2bB343Lw3jiDRfckSLMIgS&ust=1761680288925000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNiZx9CQxZADFQAAAAAdAAAAABAE"
                 }
             ],
             "activities": [
                 {
                     "name": "Temple darshan—viewing the reclining Vishnu idol through three doors; exploring the 100-ft gopuram, stone corridors, chuttambalam, sacred tank; experiencing Equinox solar alignment; visiting mural halls, shrines, joining rituals/festivals; touring the fort, shopping crafts, and enjoying local arts in Thiruvananthapuram.",
-                    "image": "https://yourbucket.com/padmanabhaswamy-idol.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmediaindia.eu%2Ftourism%2Fsree-padmanabhaswamy-temple-a-mysterious-treasure%2F&psig=AOvVaw1T6sd9aXb6g0dhA_Esi5Q5&ust=1761680240292000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNCE7sGQxZADFQAAAAAdAAAAABAE"
                 }
             ],
             "safetyTips": [
@@ -3009,7 +3009,7 @@ city_padmanabhaswamy_temple = {
             "nearbyAttractions": [
                 {
                     "name": "Kuthira Malika Palace (royal wood-carved residence); Napier Museum (Kerala art/history); Shri Chitra Art Gallery (Ravi Varma art); Kovalam Beach (iconic seaside); Ponmudi Hills/Neyyar Sanctuary (nature excursions from city).",
-                    "image": "https://yourbucket.com/kuthira-malika.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FKuthiramalika&psig=AOvVaw3dqK3gJ9wdKcR6cAMmeCw8&ust=1761680195719000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCvxKSQxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -3660,7 +3660,7 @@ city_hamsaladeevi = {
             "localCuisine": [
                 {
                     "name": "Simple vegetarian temple prasadam—pulihora (tamarind rice), sweet pongal during festivals; Andhra meals in local dhabas with spicy curries, fresh vegetables, lentils; homemade chutneys and pickles.",
-                    "image": "https://yourbucket.com/hamsaladeevi-cuisine.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpoonambachhav.blogspot.com%2F2016%2F09%2Fpuliyodharai-pulihora-south-indian.html&psig=AOvVaw2rwY0pxJLDDjLAwq_N7UA5&ust=1761680100136000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjjmPiPxZADFQAAAAAdAAAAABAE"
                 }
             ],
             "activities": [
@@ -3699,7 +3699,7 @@ city_belum_caves = {
             "localCuisine": [
                 {
                     "name": "Andhra vegetarian thali (rice, dal, pickles, spicy curries) at the canteen near the caves; pulihora (tamarind rice); simple snacks and refreshments at government facilities; more dining in nearby towns.",
-                    "image": "https://yourbucket.com/belum-caves-thali.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fandhra-meals&psig=AOvVaw2mtHqNlnnQ9YbnjEaBpUqT&ust=1761679968649000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPiS-LmPxZADFQAAAAAdAAAAABAE"
                 }
             ],
             "activities": [
@@ -3996,7 +3996,7 @@ city_ooty = {
             "nearbyAttractions": [
                 {
                     "name": "Coonoor (Sim's Park, tea gardens, viewpoints), Doddabetta Peak, Avalanche Lake, Pykara Lake and Falls, Mudumalai National Park.",
-                    "image": "https://yourbucket.com/coonoor-view.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.travelandleisureasia.com%2Fin%2Fdestinations%2Funexplored-places-in-coonoor%2F&psig=AOvVaw0H6rOQgAPQM3i66h-pu3Os&ust=1761679881288000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDv0I6PxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4115,7 +4115,7 @@ city_mahabalipuram = {
             "nearbyAttractions": [
                 {
                     "name": "Covelong Beach (water sports, resorts), Tiger Cave (rock-cut shrine), Vedanthangal Bird Sanctuary, Sadras Dutch Fort (colonial ruins), Thirukazhukundram Temple (hilltop views, sacred vultures).",
-                    "image": "https://yourbucket.com/covelong-beach.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftimesofindia.indiatimes.com%2Ftravel%2Fdestinations%2Fcovelong-beach%2Farticleshow%2F36396653.cms&psig=AOvVaw1aamkSFFR4pxc_ehMvt26b&ust=1761679823317000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNix5fOOxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4153,7 +4153,7 @@ city_brihadeeswarar_temple = {
             "nearbyAttractions": [
                 {
                     "name": "Thanjavur Palace (Saraswathi Mahal Library, Schwartz Church, Sangeetha Mahal), Rajaraja Manimandapam, Punnainallur Mariamman Temple.",
-                    "image": "https://yourbucket.com/thanjavur-palace.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.trawell.in%2Ftamilnadu%2Fthanjavur%2Fthanjavur-palace&psig=AOvVaw0RwwSFFodw0jqwT-aTfa3W&ust=1761679785198000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjztOKOxZADFQAAAAAdAAAAABAL"
                 }
             ]
         }
@@ -4192,7 +4192,7 @@ city_kodaikanal = {
             "nearbyAttractions": [
                 {
                     "name": "Pillar Rocks (picnic & views), Silver Cascade Waterfall (quick stop), Coaker’s Walk (cliffside path), Berijam Lake (forest lake, birding & picnics), Guna Caves (adventure hiking).",
-                    "image": "https://yourbucket.com/pillar-rocks.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.escape2explore.com%2Fblog%2Fattraction%2Fpillar-rocks-best-time-to-visit-mustsee-highlights%2F40&psig=AOvVaw24a73kCkPRSbn6PAKASKH6&ust=1761679728481000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOjT1MaOxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4231,7 +4231,7 @@ city_srirangam = {
             "nearbyAttractions": [
                 {
                     "name": "Rockfort Temple (panoramic hilltop shrine), Jambukeswarar Temple (water shrine), Erumbeeswarar Temple (hilltop views), St. Lourdes Church (Trichy), Kallanai (Grand Anicut) on Kaveri River.",
-                    "image": "https://yourbucket.com/rockfort-temple.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tripadvisor.in%2FAttraction_Review-g317098-d1022152-Reviews-Rock_Fort_Temple-Tiruchirappalli_Tiruchirappalli_District_Tamil_Nadu.html&psig=AOvVaw31sS_SBHfjDlu4rWFwbbTN&ust=1761679681211000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjv-6-OxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4270,7 +4270,7 @@ city_meenakshi_temple = {
             "nearbyAttractions": [
                 {
                     "name": "Tirumalai Nayak Palace, Koodal Azhagar Temple, Gandhi Memorial Museum, Alagar Kovil (in Alagar Hills), Samanar Hills (Jain caves and views).",
-                    "image": "https://yourbucket.com/tirumalai-nayak-palace.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.masalabox.co.in%2Fthirumalai-nayakar-mahal-madurai-history-pictures%2F&psig=AOvVaw2H91VA7WWLzEH-0pSOTFKH&ust=1761679597900000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLDpiIeOxZADFQAAAAAdAAAAABAK"
                 }
             ]
         }
@@ -4309,7 +4309,7 @@ city_kanyakumari = {
             "nearbyAttractions": [
                 {
                     "name": "Vivekananda Rock Memorial (meditation site), Thiruvalluvar Statue (monument), Padmanabhapuram Palace (teakwood heritage), Vattakottai Fort (coastal views), Thanumalayan Temple (Suchindram, gopuram and pillar festival).",
-                    "image": "https://yourbucket.com/thiruvalluvar-statue.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mahabalipuram.org%2Fthiruvalluvar-statue%2F&psig=AOvVaw3cIrCd-9Rk1Ccz_WXIpCuJ&ust=1761679522989000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLiCzeSNxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4347,7 +4347,7 @@ city_marina_beach = {
             "nearbyAttractions": [
                 {
                     "name": "Vivekananda House (Swami Vivekananda museum), Chepauk Palace and Stadium, University of Madras and Senate House, San Thome Basilica, Kapaleeshwarar Temple.",
-                    "image": "https://yourbucket.com/vivekananda-house.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fvivekanandahouse.org%2Fvisit-us&psig=AOvVaw03tCBRdtz-mQppopJl5hQe&ust=1761679476591000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNizhtCNxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4386,7 +4386,7 @@ city_rameshwaram = {
             "nearbyAttractions": [
                 {
                     "name": "Agni Theertham, Pamban Bridge, Kothandaramaswamy Temple, Gandhamadhana Parvatham, Abdul Kalam Memorial, Dhanushkodi (mythic Ram Setu, dramatic landscape).",
-                    "image": "https://yourbucket.com/dhanushkodi.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pilgrimagetour.in%2Fblog%2Fdhanushkoti%2F&psig=AOvVaw1qy_eSSS7sfepDTW6g-Mgb&ust=1761679421786000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLDviLONxZADFQAAAAAdAAAAABAK"
                 }
             ]
         }
@@ -4425,7 +4425,7 @@ city_coonoor = {
             "nearbyAttractions": [
                 {
                     "name": "Ooty (nearby by train/road), Kotagiri (hill town), Doddabetta Peak (highest point), Catherine Falls (twin waterfalls), Wellington Cantonment (scenic drives, golf).",
-                    "image": "https://yourbucket.com/catherine-falls.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nammanilgiris.org%2Ftourism-1%2Fcatherine-falls&psig=AOvVaw3Zgokg0-ZRcqxpXM04XxOl&ust=1761679384774000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNC7raKNxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4466,7 +4466,7 @@ city_pichavaram = {
             "nearbyAttractions": [
                 {
                     "name": "Chidambaram Nataraja Temple (historic Shiva temple), Porto Novo Beach, Vilgam Bird Sanctuary, Veeranam Lake, Parangipettai (historic port/market town).",
-                    "image": "https://yourbucket.com/chidambaram-temple.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgloballylocalsharma.wordpress.com%2F2020%2F04%2F23%2Fchidambaram-rahasyam-unfolding-secrets-scientific-facts-about-thillai-nataraja-temple%2F&psig=AOvVaw2x-iH4wAGhKcn_pmd5o7LD&ust=1761679268934000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLiz7POMxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4505,7 +4505,7 @@ city_kolli_hills = {
             "nearbyAttractions": [
                 {
                     "name": "Arapaleeswarar Temple (Shiva shrine), Agaya Gangai Falls (famous waterfall), Pulian Cholai (eco-park/views), Botanical Gardens, Ettukkai Amman Temple (guardian goddess).",
-                    "image": "https://yourbucket.com/arappaleeswarar-temple.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=http%3A%2F%2Fhill-temples.blogspot.com%2F2014%2F10%2Farapaleeswarar-temple.html&psig=AOvVaw1drQsHdOkmo32_rKfXVjGJ&ust=1761679221288000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKCHitSMxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
@@ -4544,7 +4544,7 @@ city_chettinad = {
             "nearbyAttractions": [
                 {
                     "name": "Karaikudi (markets, restaurants, railway station), Athangudi (handmade tiles), Pillaiyarpatti Temple (rock-cut Ganesha temple), Kanadukathan Chettinad Palace, Karpaga Vinayakar Temple.",
-                    "image": "https://yourbucket.com/athangudi-tiles.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fvpchettinadtiles.com%2F&psig=AOvVaw1ru2kF-AgPx26DxzLAaN0s&ust=1761679177069000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiJgr-MxZADFQAAAAAdAAAAABAK"
                 }
             ]
         }
@@ -4582,7 +4582,7 @@ city_hogenakkal_falls = {
             "nearbyAttractions": [
                 {
                     "name": "Pennagaram Village (markets, local culture), Theerthamalai Temple (hilltop shrine), Dharmapuri (heritage temples), Mutharaiyar Palace (historic site), Melagiri Hills (treks, birding, nature).",
-                    "image": "https://yourbucket.com/theerthamalai-temple.jpg"
+                    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdharmapuri.nic.in%2Fgallery%2Ftheerthamalai-temple%2F&psig=AOvVaw2dPBuAqxus6m9_hLsHnJ7i&ust=1761679126709000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIiytaaMxZADFQAAAAAdAAAAABAE"
                 }
             ]
         }
